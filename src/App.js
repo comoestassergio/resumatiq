@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import Hero from './components/Hero';
 import Personal from './components/Personal';
 import Education from './components/Education';
+import Work from './components/Work';
 
 export default function App() {
   const initialData = {
@@ -20,6 +21,19 @@ export default function App() {
   const [userData, setUserData] = useState(initialData)
   const [start, setStart] = useState(false)
   const [personalDone, setPersonalDone] = useState(false)
+  const [educationDone, setEducationDone] = useState(false)
+
+  if (educationDone){
+    return (
+      <Work userData={userData} setUserData={setUserData}/>
+    )
+  }
+
+  if (personalDone) {
+    return (
+      <Education userData={userData} setUserData={setUserData} setEducationDone={setEducationDone} setPersonalDone={setPersonalDone} />
+    )
+  }
 
   if (start) {
     return (
@@ -27,13 +41,10 @@ export default function App() {
     )
   }
 
-  if (personalDone) {
-    return (
-      <Education userData={userData} setUserData={setUserData} />
-    )
-  }
   
   return (
-    <Hero setStart={setStart} /> 
+    <>
+      <Hero setStart={setStart} /> 
+    </>
   )
 }
