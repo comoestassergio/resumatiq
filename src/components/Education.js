@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import EducationForm from "./EducationForm"
 import EducationCard from "./EducationCard"
 
-const Education = ( {userData, setUserData} ) => {
+const Education = ( {userData, setUserData, setEducationDone} ) => {
     const [isClicked, setIsClicked] = useState(false)
     const [education, setEducation] = useState([])
 
@@ -15,6 +15,12 @@ const Education = ( {userData, setUserData} ) => {
             ...userData,
             education
         })
+        changePage()
+    }
+
+    const changePage = () => {
+        setEducationDone(true)
+        setEducationDone(false)
     }
 
     if (isClicked){
