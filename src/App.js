@@ -24,12 +24,24 @@ export default function App() {
   const [start, setStart] = useState(false)
   const [personalDone, setPersonalDone] = useState(false)
   const [educationDone, setEducationDone] = useState(false)
+  const [workDone, setWorkDone] = useState(false)
+
+  if (workDone){
+    return (
+      <Skills 
+        userData={userData} 
+        setUserData={setUserData} 
+      />
+    )
+  }
 
   if (educationDone){
     return (
       <Work 
         userData={userData} 
         setUserData={setUserData}
+        setWorkDone={setWorkDone}
+        setEducationDone={setEducationDone}
       />
     )
   }
@@ -60,7 +72,6 @@ export default function App() {
   return (
     <>
       <Hero setStart={setStart} /> 
-      <Skills userData={userData} setUserData={setUserData} />
     </>
   )
 }
