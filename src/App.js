@@ -60,7 +60,7 @@ export default function App() {
   return (
     <>
       <Hero setStart={setStart} /> 
-      <Skills />
+      <Skills userData={userData} setUserData={setUserData} />
     </>
   )
 }
