@@ -5,6 +5,7 @@ import Personal from './components/Personal';
 import Education from './components/Education';
 import Work from './components/Work';
 import Skills from './components/Skills';
+import Interests from './components/Interests';
 
 export default function App() {
   const initialData = {
@@ -25,12 +26,21 @@ export default function App() {
   const [personalDone, setPersonalDone] = useState(false)
   const [educationDone, setEducationDone] = useState(false)
   const [workDone, setWorkDone] = useState(false)
+  const [skillsDone, setSkillsDone] = useState(false)
+
+  if (skillsDone) {
+    return (
+      <Interests userData={userData} setUserData={setUserData} />
+    )
+  }
 
   if (workDone){
     return (
       <Skills 
         userData={userData} 
         setUserData={setUserData} 
+        setSkillsDone={setSkillsDone}
+        setWorkDone={setWorkDone}
       />
     )
   }
