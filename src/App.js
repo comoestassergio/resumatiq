@@ -25,19 +25,32 @@ export default function App() {
 
   if (educationDone){
     return (
-      <Work userData={userData} setUserData={setUserData}/>
+      <Work 
+        userData={userData} 
+        setUserData={setUserData}
+      />
     )
   }
 
   if (personalDone) {
     return (
-      <Education userData={userData} setUserData={setUserData} setEducationDone={setEducationDone} setPersonalDone={setPersonalDone} />
+      <Education 
+        userData={userData} 
+        setUserData={setUserData} 
+        setEducationDone={setEducationDone} 
+        setPersonalDone={setPersonalDone} 
+      />
     )
   }
 
   if (start) {
     return (
-      <Personal userData={userData} setUserData={setUserData} setStart={setStart} setPersonalDone={setPersonalDone}/>
+      <Personal 
+        userData={userData} 
+        setUserData={setUserData} 
+        setStart={setStart} 
+        setPersonalDone={setPersonalDone}
+      />
     )
   }
 
