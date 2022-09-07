@@ -57,7 +57,7 @@ const Skills = ({ userData, setUserData }) => {
                 }
             </form>
             {skillEntry.length > 0 &&
-                <button onClick={handleContinue} className="btn btn-outline">Continue</button>
+                <button onClick={handleContinue} className="btn btn-ghost">Continue</button>
             }
         </div>
     )
