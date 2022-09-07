@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import Socials from "./PersonalSocials"
 
 const Personal = ({userData, setUserData, setPersonalDone, setStart}) => {
 
@@ -23,9 +24,15 @@ const Personal = ({userData, setUserData, setPersonalDone, setStart}) => {
         setPersonalDone(true)
     }
 
+    const [addSocials, setAddSocials] = useState(false)
+
+    const handleAddSocials = () => {
+        setAddSocials(!addSocials)
+    }
+
     return (
         <div className="flex flex-col items-center min-h-screen">
-            <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-2 m-auto">
+            <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-2 m-auto py-8">
                 <input 
                     onChange={handleChange} 
                     type="text" 
@@ -79,6 +86,10 @@ const Personal = ({userData, setUserData, setPersonalDone, setStart}) => {
                     value={formValues.address} 
                     required
                 />
+                {addSocials? <Socials /> : <></>}
+                <button onClick={handleAddSocials} type="button" className="btn btn-ghost col-span-2">
+                    {addSocials? 'Close Socials' : 'Add Socials'}
+                </button>
                 <button type="submit" className="btn btn-outline col-span-2">
                     Continue
                 </button>
