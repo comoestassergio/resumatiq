@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import Personal from './components/Personal';
 import Education from './components/Education';
 import Work from './components/Work';
+import Skills from './components/Skills';
 
 export default function App() {
   const initialData = {
@@ -16,6 +17,7 @@ export default function App() {
     workExperience: [],
     education: [],
     interests: [],
+    skills: [],
   }
 
   const [userData, setUserData] = useState(initialData)
@@ -58,6 +60,7 @@ export default function App() {
   return (
     <>
       <Hero setStart={setStart} /> 
+      <Skills />
     </>
   )
 }
