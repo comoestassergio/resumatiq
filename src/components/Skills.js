@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import uniqid from 'uniqid'
 import SkillCard from "./SkillCard";
 
-const Skills = ({ userData, setUserData }) => {
+const Skills = ({ userData, setUserData, setSkillsDone, setWorkDone }) => {
 
     const skills = []
 
@@ -27,6 +27,12 @@ const Skills = ({ userData, setUserData }) => {
             ...userData,
             skills: skillEntry,
         })
+        changePage()
+    }
+
+    const changePage = () => {
+        setWorkDone(false)
+        setSkillsDone(true)
     }
 
     return (
