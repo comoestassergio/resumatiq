@@ -19,6 +19,7 @@ export default function App() {
     education: [],
     interests: [],
     skills: [],
+    socials: [],
   }
 
   const [userData, setUserData] = useState(initialData)
