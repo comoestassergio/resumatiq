@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import uniqid from 'uniqid'
 import SkillCard from "./SkillCard";
 
-const Skills = () => {
+const Skills = ({ userData, setUserData }) => {
 
     const skills = []
 
@@ -20,6 +20,13 @@ const Skills = () => {
             id: uniqid()
         }))
         setInput('')
+    }
+
+    const handleContinue = () => {
+        setUserData({
+            ...userData,
+            skills: skillEntry,
+        })
     }
 
     return (
@@ -49,6 +56,9 @@ const Skills = () => {
                     </button>
                 }
             </form>
+            {skillEntry.length > 0 &&
+                <button onClick={handleContinue} className="btn btn-outline">Continue</button>
+            }
         </div>
     )
 }
