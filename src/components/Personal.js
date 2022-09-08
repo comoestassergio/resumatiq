@@ -86,7 +86,7 @@ const Personal = ({userData, setUserData, setPersonalDone, setStart}) => {
                     value={formValues.address} 
                     required
                 />
-                {addSocials? <Socials /> : <></>}
+                {addSocials? <Socials setFormValues={setFormValues} formValues={formValues}/> : <></>}
                 <button onClick={handleAddSocials} type="button" className="btn btn-ghost col-span-2">
                     {addSocials? 'Close Socials' : 'Add Socials'}
                 </button>
