@@ -15,11 +15,14 @@ export default function App() {
     number: '',
     website: '',
     address: '',
+    telegram: '',
+    linkedin: '',
+    github: '',
+    twitter: '',
     workExperience: [],
     education: [],
     interests: [],
     skills: [],
-    socials: [],
   }
 
   const [userData, setUserData] = useState(initialData)
