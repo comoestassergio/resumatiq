@@ -126,7 +126,7 @@ const WorkForm = ( { workExperience, setWorkExperience, setIsClicked, isClicked}
                     Still working
                 </button>
             </div>
-            
+
             <button type="submit" className="btn w-80">
                 Add
             </button>
