@@ -1,7 +1,7 @@
 import React, {useState} from "react"
 import uniqid from 'uniqid'
 
-const WorkForm = ( { workExperience, setWorkExperience, setIsClicked} ) => {
+const WorkForm = ( { workExperience, setWorkExperience, setIsClicked, isClicked} ) => {
 
     const workData = {
         workPlace: '',
@@ -27,7 +27,7 @@ const WorkForm = ( { workExperience, setWorkExperience, setIsClicked} ) => {
         e.preventDefault()
         if (formValidator()){
             setWorkExperience(workExperience.concat(workEntry))
-            setIsClicked(false)
+            setIsClicked(!isClicked)
         }
     }
 
@@ -71,6 +71,10 @@ const WorkForm = ( { workExperience, setWorkExperience, setIsClicked} ) => {
                 finishYear: ''
             })
         }
+    }
+
+    const handleCancel = () => {
+        setIsClicked(!isClicked)
     }
 
     return (
@@ -125,6 +129,9 @@ const WorkForm = ( { workExperience, setWorkExperience, setIsClicked} ) => {
             
             <button type="submit" className="btn w-80">
                 Add
+            </button>
+            <button onClick={handleCancel} type="button" className="btn btn-ghost hover:bg-transparent hover:text-red-400 w-80">
+                Cancel
             </button>
         </form>
     )

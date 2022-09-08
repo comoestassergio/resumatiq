@@ -1,7 +1,7 @@
 import React, {useState} from "react"
 import uniqid from 'uniqid'
 
-const EducationForm = ( { education, setEducation, setIsClicked } ) => {
+const EducationForm = ( { education, setEducation, setIsClicked, isClicked } ) => {
 
     const educationData = {
         university: '',
@@ -46,6 +46,10 @@ const EducationForm = ( { education, setEducation, setIsClicked } ) => {
             else {
                 return false
             }
+    }
+
+    const handleCancel = () => {
+        setIsClicked(!isClicked)
     }
 
     return (
@@ -93,6 +97,9 @@ const EducationForm = ( { education, setEducation, setIsClicked } ) => {
             />
             <button type="submit" className="btn w-80">
                 Add
+            </button>
+            <button onClick={handleCancel} type="button" className="btn btn-ghost hover:bg-transparent hover:text-red-400 w-80">
+                Cancel
             </button>
         </form>
     )

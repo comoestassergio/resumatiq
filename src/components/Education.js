@@ -26,7 +26,7 @@ const Education = ( {userData, setUserData, setEducationDone, setPersonalDone} )
     if (isClicked){
         return (
             <div className="flex justify-center items-center min-h-screen bg-base-300">
-                <EducationForm education={education} setEducation={setEducation} setIsClicked={setIsClicked} />
+                <EducationForm education={education} setEducation={setEducation} setIsClicked={setIsClicked} isClicked={isClicked}/>
             </div>
         )
     }

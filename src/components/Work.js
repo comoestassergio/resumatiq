@@ -27,7 +27,7 @@ const Work = ({ userData, setUserData, setWorkDone, setEducationDone }) => {
     if (isClicked) {
         return (
             <div className="flex justify-center items-center min-h-screen bg-base-300">
-                <WorkForm workExperience={workExperience} setWorkExperience={setWorkExperience} setIsClicked={setIsClicked} />
+                <WorkForm workExperience={workExperience} setWorkExperience={setWorkExperience} setIsClicked={setIsClicked} isClicked={isClicked}/>
             </div>
         )
     }
