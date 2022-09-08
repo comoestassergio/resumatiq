@@ -59,6 +59,9 @@ const Interests = ({ userData, setUserData }) => {
             {interestEntry.length > 0 &&
                 <button onClick={handleContinue} className="btn btn-ghost">Continue</button>
             }
+            {interestEntry.length < 1 &&
+                <button onClick={handleContinue} className="btn btn-ghost">Skip</button>
+            } 
         </div>
     )
 }
