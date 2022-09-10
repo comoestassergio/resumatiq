@@ -6,6 +6,7 @@ import Education from './components/Education';
 import Work from './components/Work';
 import Skills from './components/Skills';
 import Interests from './components/Interests';
+import CV from './components/CV';
 
 export default function App() {
   const initialData = {
@@ -86,6 +87,7 @@ export default function App() {
   return (
     <>
       <Hero setStart={setStart} /> 
+      <CV />
     </>
   )
 }
