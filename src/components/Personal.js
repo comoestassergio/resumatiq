@@ -80,7 +80,7 @@ const Personal = ({userData, setUserData, setPersonalDone, setStart}) => {
                 <input 
                     onChange={handleChange} 
                     type="text" 
-                    placeholder="Address" 
+                    placeholder="City" 
                     name="address"
                     className="input input-bordered w-full max-w-xs col-span-2 m-auto sm:col-span-1"
                     value={formValues.address} 
