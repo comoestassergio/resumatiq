@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Title = ({ userData, setUserData }) => {
+const Title = ({ userData, setUserData, setTitleDone, setInterestsDone }) => {
 
     const [input, setInput] = useState('')
 
@@ -13,6 +13,13 @@ const Title = ({ userData, setUserData }) => {
             ...userData,
             title: input,
         })
+
+        changePage()
+    }
+
+    const changePage = () => {
+        setInterestsDone(false)
+        setTitleDone(true)
     }
 
     return (
