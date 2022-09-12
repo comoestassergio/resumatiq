@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import uniqid from 'uniqid'
 import InterestCard from "./InterestCard";
 
-const Interests = ({ userData, setUserData }) => {
+const Interests = ({ userData, setUserData, setInterestsDone, setWorkDone }) => {
 
     const interests = []
 
@@ -27,6 +27,13 @@ const Interests = ({ userData, setUserData }) => {
             ...userData,
             interests: interestEntry,
         })
+
+        changePage()
+    }
+
+    const changePage = () => {
+        setWorkDone(false)
+        setInterestsDone(true)
     }
 
     return (
