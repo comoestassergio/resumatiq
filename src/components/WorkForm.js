@@ -63,7 +63,7 @@ const WorkForm = ( { workExperience, setWorkExperience, setIsClicked, isClicked}
         if (!isStillWorking) {
             setWorkEntry({
                 ...workEntry,
-                finishYear: 'Now'
+                finishYear: 'Present'
             })
         }else {
             setWorkEntry({
