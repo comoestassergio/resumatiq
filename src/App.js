@@ -35,10 +35,22 @@ export default function App() {
   const [workDone, setWorkDone] = useState(false)
   const [skillsDone, setSkillsDone] = useState(false)
   const [interestsDone, setInterestsDone] = useState(false)
+  const [titleDone, setTitleDone] = useState(false)
+
+  if (titleDone) {
+    return (
+      <CV userData={userData}/>
+    )
+  }
 
   if (interestsDone){
     return (
-      <Title userData={userData} setUserData={setUserData} />
+      <Title 
+        userData={userData} 
+        setUserData={setUserData}
+        setTitleDone={setTitleDone}
+        setInterestsDone={setInterestsDone}
+      />
     )
   }
 
