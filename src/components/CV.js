@@ -7,9 +7,9 @@ const CV = (props) => {
 
     return (
         <div className="min-h-screen bg-base-100 py-5 px-7 lg:max-w-5xl lg:mx-auto">
-            <div className="mb-4 relative after:absolute after:w-full after:bg-gray-400 after:h-0.5">
+            <div className="flex flex-col gap-2 mb-4 relative after:absolute after:w-full after:bg-gray-400 after:h-0.5 after:bottom-0">
                 <h1 className="text-5xl"><span className="text-gray-700">{data.firstName}</span> <span className="font-bold">{data.lastName}</span></h1>
-                <h3 className="text-lg uppercase text-gray-600">Title</h3>
+                <h3 className="text-lg uppercase text-gray-600">{data.title}</h3>
             </div>
             <div className="flex flex-row gap-3 flex-wrap">
                 <p className="flex flex-row gap-2 items-center">
@@ -74,7 +74,7 @@ const CV = (props) => {
                 }
             </div>
             <div className="grid grid-cols-2 mt-8 gap-x-10 gap-y-8">
-                <section className="flex flex-col gap-2 row-span-2">
+                <section className={`flex flex-col gap-2 ${data.workExperience.length > 1 ? 'row-span-2' : 'row-span-1'}`}>
                     <h2 className="text-2xl font-bold uppercase mb-4">Experience</h2>
 
                     {data.workExperience.map(el => (
