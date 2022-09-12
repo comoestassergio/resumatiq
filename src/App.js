@@ -6,6 +6,7 @@ import Education from './components/Education';
 import Work from './components/Work';
 import Skills from './components/Skills';
 import Interests from './components/Interests';
+import Title from './components/Title';
 import CV from './components/CV';
 
 export default function App() {
@@ -24,6 +25,7 @@ export default function App() {
     education: [],
     interests: [],
     skills: [],
+    title: '',
   }
 
   const [userData, setUserData] = useState(initialData)
@@ -32,10 +34,22 @@ export default function App() {
   const [educationDone, setEducationDone] = useState(false)
   const [workDone, setWorkDone] = useState(false)
   const [skillsDone, setSkillsDone] = useState(false)
+  const [interestsDone, setInterestsDone] = useState(false)
+
+  if (interestsDone){
+    return (
+      <Title userData={userData} setUserData={setUserData} />
+    )
+  }
 
   if (skillsDone) {
     return (
-      <Interests userData={userData} setUserData={setUserData} />
+      <Interests 
+        userData={userData} 
+        setUserData={setUserData}
+        setInterestsDone={setInterestsDone}
+        setWorkDone={setWorkDone} 
+      />
     )
   }
 
@@ -87,7 +101,6 @@ export default function App() {
   return (
     <>
       <Hero setStart={setStart} /> 
-      <CV />
     </>
   )
 }
