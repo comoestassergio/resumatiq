@@ -74,7 +74,7 @@ const CV = (props) => {
                 }
             </div>
             <div className="grid grid-cols-2 mt-8 gap-x-10 gap-y-8">
-                <section className={`flex flex-col gap-2 ${data.workExperience.length > 1 ? 'row-span-2' : 'row-span-1'}`}>
+                <section className={`flex flex-col gap-2 col-span-2 md:col-span-1 ${data.workExperience.length > 1 ? 'row-span-2' : 'row-span-1'}`}>
                     <h2 className="text-2xl font-bold uppercase mb-4">Experience</h2>
 
                     {data.workExperience.map(el => (
@@ -101,7 +101,7 @@ const CV = (props) => {
                         </div>
                     ))}
                 </section>
-                <section>
+                <section className="col-span-2 md:col-span-1">
                     <h2 className="text-2xl font-bold uppercase mb-4">Skills</h2>
                     <ul className="flex flex-row gap-3 pt-5 flex-wrap">
                         {data.skills.map(el => (
@@ -109,7 +109,7 @@ const CV = (props) => {
                         ))}
                     </ul>
                 </section>
-                <section className="flex flex-col gap-2">
+                <section className="flex flex-col gap-2 col-span-2 md:col-span-1">
                     <h2 className="text-2xl font-bold uppercase mb-4">Education</h2>
                     {data.education.map(el => (
                         <div key={el.id} className="flex flex-col gap-1 border-2 border-gray-300 rounded-lg p-5">
@@ -125,7 +125,7 @@ const CV = (props) => {
                     ))}
                 </section>
                 {data.interests.length > 0 &&
-                    <section>
+                    <section className="col-span-2 md:col-span-1">
                          <h2 className="text-2xl font-bold uppercase mb-4">Interests</h2>
                          <ul className="flex gap-3 flex-wrap">
                             {data.interests.map(el => (
