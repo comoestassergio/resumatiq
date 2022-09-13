@@ -45,9 +45,8 @@ const Tasks = ({ isClicked, setIsClicked, setWorkEntry, workEntry, workExperienc
                     />
                 ))}
             </ul>
-            <form className="flex gap-2">
+            <form onSubmit={handleAddTask} className="flex gap-2">
                 <input
-                    onSubmit={handleAddTask}
                     onChange={handleInput} 
                     type="text" 
                     placeholder="E.g. Solved world hunger" 
@@ -59,7 +58,7 @@ const Tasks = ({ isClicked, setIsClicked, setWorkEntry, workEntry, workExperienc
                 />
                 <button
                     type="submit" 
-                    className={`btn ${input.length > 0 ? 'btn-primary bg-orange-300 border-orange-300' : 'btn-disabled' }  hover:bg-orange-600 hover:border-orange-600`}
+                    className={`btn ${input.length > 0 ? 'btn-accent' : 'btn-disabled' }  hover:bg-orange-600 hover:border-orange-600`}
                 >
                     Add
                 </button>
