@@ -45,6 +45,7 @@ const Work = ({ userData, setUserData, setWorkDone, setEducationDone }) => {
                         workExperience={workExperience} 
                         setWorkExperience={setWorkExperience}
                         card={el}
+                        tasks={el.tasks}
                     />
                 ))}
             </ul>
