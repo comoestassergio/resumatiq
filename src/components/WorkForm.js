@@ -1,5 +1,6 @@
 import React, {useState} from "react"
 import uniqid from 'uniqid'
+import Tasks from "./WorkTasks"
 
 const WorkForm = ( { workExperience, setWorkExperience, setIsClicked, isClicked} ) => {
 
@@ -8,6 +9,7 @@ const WorkForm = ( { workExperience, setWorkExperience, setIsClicked, isClicked}
         position: '',
         startYear: '',
         finishYear: '',
+        tasks: [],
     }
 
     const [workEntry, setWorkEntry] = useState(workData)
@@ -77,6 +79,25 @@ const WorkForm = ( { workExperience, setWorkExperience, setIsClicked, isClicked}
         setIsClicked(!isClicked)
     }
 
+    const [openTasks, setOpenTasks] = useState(false)
+
+    const handleOpenTasks = () => {
+        setOpenTasks(!openTasks)
+    }
+
+    if (openTasks) {
+        return (
+            <Tasks
+                isClicked={isClicked}
+                setIsClicked={setIsClicked}
+                setWorkEntry={setWorkEntry}
+                workEntry={workEntry}
+                workExperience={workExperience}
+                setWorkExperience={setWorkExperience}
+            />
+        )
+    }
+
     return (
         <form onSubmit={handleSubmit} className="flex flex-col items-center gap-3 w-80">
             <h2 className="text-lg mb-3 uppercase font-semibold">New Workplace</h2>
@@ -126,6 +147,8 @@ const WorkForm = ( { workExperience, setWorkExperience, setIsClicked, isClicked}
                     Still working
                 </button>
             </div>
+
+            <button onClick={handleOpenTasks} type="button" className="btn btn-accent w-80">+ responsibilities</button>
 
             <button type="submit" className="btn w-80">
                 Add
