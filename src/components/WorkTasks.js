@@ -13,7 +13,8 @@ const Tasks = ({ isClicked, setIsClicked, setWorkEntry, workEntry, workExperienc
         setInput(e.target.value)
     }
 
-    const handleAddTask = () => {
+    const handleAddTask = (e) => {
+        e.preventDefault()
         setTaskEntry(taskEntry.concat({
             task: input,
             id: uniqid(),
@@ -46,6 +47,7 @@ const Tasks = ({ isClicked, setIsClicked, setWorkEntry, workEntry, workExperienc
             </ul>
             <form className="flex gap-2">
                 <input
+                    onSubmit={handleAddTask}
                     onChange={handleInput} 
                     type="text" 
                     placeholder="E.g. Solved world hunger" 
@@ -56,15 +58,14 @@ const Tasks = ({ isClicked, setIsClicked, setWorkEntry, workEntry, workExperienc
                     required
                 />
                 <button
-                    type="button" 
-                    onClick={handleAddTask} 
+                    type="submit" 
                     className={`btn ${input.length > 0 ? 'btn-primary bg-orange-300 border-orange-300' : 'btn-disabled' }  hover:bg-orange-600 hover:border-orange-600`}
                 >
                     Add
                 </button>
             </form>
             {taskEntry.length > 0 &&
-                <button type="submit" onClick={handleContinue} className="btn btn-ghost">Continue</button>
+                <button type="button" onClick={handleContinue} className="btn btn-ghost">Continue</button>
             }
         </div>
     )
