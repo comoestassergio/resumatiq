@@ -8,11 +8,11 @@ const CV = (props) => {
     return (
         <div className="min-h-screen bg-base-100 py-5 px-7 lg:max-w-5xl lg:mx-auto">
             <div className="flex flex-col gap-2 mb-4 relative after:absolute after:w-full after:bg-gray-400 after:h-0.5 after:bottom-0">
-                <h1 className="text-5xl"><span className="text-gray-700">{data.firstName}</span> <span className="font-bold">{data.lastName}</span></h1>
+                <h1 className="text-5xl capitalize"><span className="text-gray-700">{data.firstName}</span> <span className="font-bold">{data.lastName}</span></h1>
                 <h3 className="text-lg uppercase text-gray-600">{data.title}</h3>
             </div>
             <div className="flex flex-row gap-3 flex-wrap">
-                <p className="flex flex-row gap-2 items-center">
+                <p className="flex flex-row gap-2 items-center capitalize">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
                         <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
@@ -75,7 +75,7 @@ const CV = (props) => {
             </div>
             <div className="grid grid-cols-2 mt-8 gap-x-10 gap-y-8">
                 <section className={`flex flex-col gap-2 col-span-2 md:col-span-1 ${data.workExperience.length > 1 ? 'row-span-2' : 'row-span-1'}`}>
-                    <h2 className="text-2xl font-bold uppercase mb-4">Experience</h2>
+                    <h2 className="text-2xl font-bold uppercase mb-1">Experience</h2>
 
                     {data.workExperience.map(el => (
                         <div key={el.id} className="flex flex-col gap-1 border-2 border-solid border-gray-300 rounded-lg p-5">
@@ -102,15 +102,15 @@ const CV = (props) => {
                     ))}
                 </section>
                 <section className="col-span-2 md:col-span-1">
-                    <h2 className="text-2xl font-bold uppercase mb-4">Skills</h2>
-                    <ul className="flex flex-row gap-3 pt-5 flex-wrap">
+                    <h2 className="text-2xl font-bold uppercase mb-1">Skills</h2>
+                    <ul className="flex flex-row gap-3 mt-3 flex-wrap">
                         {data.skills.map(el => (
                             <li key={el.id} className="border-2 border-gray-300 capitalize px-5 py-2 rounded-lg">{el.skill}</li>
                         ))}
                     </ul>
                 </section>
                 <section className="flex flex-col gap-2 col-span-2 md:col-span-1">
-                    <h2 className="text-2xl font-bold uppercase mb-4">Education</h2>
+                    <h2 className="text-2xl font-bold uppercase mb-1">Education</h2>
                     {data.education.map(el => (
                         <div key={el.id} className="flex flex-col gap-1 border-2 border-gray-300 rounded-lg p-5">
                             <p className="text-xl uppercase text-gray-600">{el.university}</p>
