@@ -87,17 +87,13 @@ const CV = (props) => {
                                 </svg>
                                 {el.startYear} - {el.finishYear}
                             </p>
-                            <ul className="list-disc ml-5 mt-2">
-                                <li>
-                                    First task
-                                </li>
-                                <li>
-                                    Second task
-                                </li>
-                                <li>
-                                    Third task
-                                </li>
-                            </ul>
+                            {data.tasks.length > 0 &&
+                                <ul className="list-disc ml-5 mt-2">
+                                    {data.tasks.map(el => (
+                                        <li key={el.id}>{el.task}</li>
+                                    ))}
+                                </ul>
+                            }
                         </div>
                     ))}
                 </section>
