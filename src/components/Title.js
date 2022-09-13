@@ -8,7 +8,8 @@ const Title = ({ userData, setUserData, setTitleDone, setInterestsDone }) => {
         setInput(e.target.value)
     }
 
-    const handleFinish = () => {
+    const handleFinish = (e) => {
+        e.preventDefault()
         setUserData({
             ...userData,
             title: input,
@@ -24,7 +25,7 @@ const Title = ({ userData, setUserData, setTitleDone, setInterestsDone }) => {
 
     return (
         <div className="flex flex-col items-center justify-center gap-5 min-h-screen bg-base-200">
-            <form className="flex gap-2">
+            <form onSubmit={handleFinish} className="flex gap-2">
                 <input
                     onChange={handleInput} 
                     type="text" 
@@ -37,7 +38,7 @@ const Title = ({ userData, setUserData, setTitleDone, setInterestsDone }) => {
                 />
             </form>
             {input.length > 0 &&
-                <button onClick={handleFinish} className="btn btn-primary">Finish</button>
+                <button type="submit" className="btn btn-primary">Finish</button>
             }
         </div>
     )
