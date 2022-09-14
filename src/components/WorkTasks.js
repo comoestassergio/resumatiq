@@ -13,23 +13,29 @@ const Tasks = ({ isClicked, setIsClicked, setWorkEntry, workEntry, workExperienc
         setInput(e.target.value)
     }
 
-    const handleAddTask = (e) => {
-        e.preventDefault()
+    const handleAddTask = () => {
         setTaskEntry(taskEntry.concat({
             task: input,
             id: uniqid(),
         }))
-        setInput('')
-    }
-
-    const handleContinue = (e) => {
-        e.preventDefault()
         setWorkEntry({
             ...workEntry,
             tasks: taskEntry,
         })
+        setInput('')
+    }
+
+    const handleContinue = () => {
+        // setWorkEntry({
+        //     ...workEntry,
+        //     tasks: taskEntry,
+        // })
         setWorkExperience(workExperience.concat(workEntry))
         setIsClicked(!isClicked)
+    }
+
+    const preventDefault = (e) => {
+        e.preventDefault()
     }
 
     return (
@@ -45,26 +51,40 @@ const Tasks = ({ isClicked, setIsClicked, setWorkEntry, workEntry, workExperienc
                     />
                 ))}
             </ul>
-            <form onSubmit={handleAddTask} className="flex gap-2">
+            <form onSubmit={preventDefault} className="flex flex-col gap-2">
                 <input
                     onChange={handleInput} 
                     type="text" 
                     placeholder="E.g. Solved world hunger" 
-                    className="input input-bordered w-80 max-w-xs placeholder:italic" 
-                    name="skill"
+                    className="input input-bordered w-80 md:w-96 placeholder:italic" 
+                    name="task"
                     value={input}
                     maxLength={100}
-                    required
+                    required={taskEntry.length < 1 ? true : false}
                 />
                 <button
-                    type="submit" 
-                    className={`btn ${input.length > 0 ? 'btn-accent' : 'btn-disabled' }  hover:bg-orange-600 hover:border-orange-600`}
+                onClick={handleAddTask}
+                type='submit'
+                className={`btn w-80 md:w-96 ${input.length > 0 ? 'btn-accent' : 'btn-disabled' }`}
                 >
-                    Add
-                </button>
+                 Add
+            </button>
             </form>
-            {taskEntry.length > 0 &&
-                <button type="button" onClick={handleContinue} className="btn btn-ghost">Continue</button>
+            {taskEntry.length > 0 && taskEntry.length < 5 &&
+                <button
+                    type="submit" 
+                    onClick={handleContinue} 
+                    className={`btn ${taskEntry.length > 2 ? 'btn-success' : 'btn-ghost'}`}>
+                    Continue
+                </button>
+            }
+            {taskEntry.length > 4 &&
+                <button
+                    type="submit" 
+                    onClick={handleContinue} 
+                    className={`btn ${taskEntry.length > 6 ? 'btn-disabled' : 'btn-warning'}`}>
+                    {taskEntry.length > 6 ? 'Too many tasks' : 'Continue'}
+                </button>
             }
         </div>
     )
