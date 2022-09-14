@@ -33,8 +33,8 @@ const Work = ({ userData, setUserData, setWorkDone, setEducationDone }) => {
     }
 
     return (
-        <div className="flex flex-col justify-center items-center min-h-screen bg-base-300 gap-2">
-            <ul className="flex flex-col gap-2 mb-4">
+        <div className="flex flex-col justify-center items-center min-h-screen py-12 bg-base-300 gap-2">
+            <ul className="flex flex-col gap-4 mb-4">
                 {workExperience.map(el => (
                     <WorkCard
                         key={el.id} 
