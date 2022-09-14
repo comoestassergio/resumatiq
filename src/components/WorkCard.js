@@ -7,7 +7,7 @@ const WorkCard = ({ workPlace, position, startYear, finishYear, workExperience, 
     }
 
     return (
-        <li className={`${tasks.length > 0 ? 'grid grid-cols-1 grid-rows-6 place-items-center gap-1' : 'flex flex-row items-center justify-between' } w-96 bg-slate-50 rounded-lg p-5 card`}>
+        <li className={`${tasks.length > 0 ? 'grid grid-cols-1 grid-rows-5 place-items-center gap-1' : 'flex flex-row items-center justify-between' } w-96 bg-slate-50 rounded-lg p-5 card`}>
             <div className={`${tasks.length > 0 ? 'row-span-2 text-center' : '' }`}>
                 <h3 className="text-lg uppercase text-gray-600">
                     {position}
@@ -20,7 +20,7 @@ const WorkCard = ({ workPlace, position, startYear, finishYear, workExperience, 
                 </p>
             </div>
             {tasks.length > 0 && 
-                <ul className="row-span-3 flex flex-col gap-2 text-gray-700">
+                <ul className="row-span-2 flex flex-col gap-2 text-gray-700">
                     {tasks.map(el => (
                         <li key={el.id} className="border-2 border-gray-300 rounded-lg border-dotted p-2">{el.task}</li>
                     ))}
