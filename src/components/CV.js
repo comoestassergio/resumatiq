@@ -99,7 +99,7 @@ const CV = (props) => {
                 </section>
                 <section className="col-span-2 md:col-span-1 print:col-span-1">
                     <h2 className="text-2xl font-bold uppercase mb-1">Skills</h2>
-                    <ul className="flex flex-row gap-3 mt-3 flex-wrap">
+                    <ul className="flex flex-row gap-3 mt-3 flex-wrap print:gap-2">
                         {data.skills.map(el => (
                             <li key={el.id} className="border-2 border-gray-300 capitalize px-5 py-2 rounded-lg print:px-2 print:py-0.5 print:text-sm">{el.skill}</li>
                         ))}
@@ -123,7 +123,7 @@ const CV = (props) => {
                 {data.interests.length > 0 &&
                     <section className=" col-start-1 row-start-2 col-span-2 md:col-span-1 print:col-span-1 ">
                          <h2 className="text-2xl font-bold uppercase mb-4">Interests</h2>
-                         <ul className="flex gap-3 flex-wrap">
+                         <ul className="flex gap-3 flex-wrap print:gap-2">
                             {data.interests.map(el => (
                                 <li key={el.id} className='border-2 border-gray-300 capitalize px-5 py-2 rounded-lg print:px-2 print:py-0.5 print:text-sm'>{el.interest}</li>
                             ))}
