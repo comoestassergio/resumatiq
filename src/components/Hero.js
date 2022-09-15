@@ -32,7 +32,7 @@ const Hero = ({ setStart, isLocalCV, setTitleDone, titleDone, setUserData }) => 
                 {isLocalCV &&
                     <div className="flex flex-col gap-2">
                         <button onClick={handleLocal} className="btn btn-secondary">Open last created</button>
-                        <button onClick={handleNew} className="btn btn-ghost">Create new CV</button>
+                        <button onClick={handleNew} className="btn btn-ghost">Create new</button>
                     </div>
                 }
                 </div>
