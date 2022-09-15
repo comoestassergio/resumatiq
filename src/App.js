@@ -1,5 +1,5 @@
 import './App.css';
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Hero from './components/Hero';
 import Personal from './components/Personal';
 import Education from './components/Education';
@@ -36,8 +36,25 @@ export default function App() {
   const [skillsDone, setSkillsDone] = useState(false)
   const [interestsDone, setInterestsDone] = useState(false)
   const [titleDone, setTitleDone] = useState(false)
+  const [isLocalCV, setIsLocalCV] = useState(false)
+
+  useEffect(() => {
+    checkLocalStorage()
+  }, [])
+
+  const checkLocalStorage = () => {
+    if(localStorage.getItem('CV') !== null){
+      return setIsLocalCV(true)
+    }
+  } 
+
+  const saveToLocalStorage = () => {
+    localStorage.setItem('CV', JSON.stringify(userData))
+  }
 
   if (titleDone) {
+    saveToLocalStorage()
+
     return (
       <CV userData={userData}/>
     )
@@ -112,7 +129,13 @@ export default function App() {
   
   return (
     <>
-      <Hero setStart={setStart} /> 
+      <Hero 
+        setStart={setStart} 
+        isLocalCV={isLocalCV} 
+        setTitleDone={setTitleDone} 
+        titleDone={titleDone}
+        setUserData={setUserData}
+      /> 
     </>
   )
 }
