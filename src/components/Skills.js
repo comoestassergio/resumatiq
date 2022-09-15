@@ -63,7 +63,7 @@ const Skills = ({ userData, setUserData, setSkillsDone, setWorkDone }) => {
                 }
             </form>
             {skillEntry.length > 0 &&
-                <button onClick={handleContinue} className="btn btn-ghost">Continue</button>
+                <button onClick={handleContinue} className={`btn ${skillEntry.length > 14 ? 'btn-disabled' : 'btn-ghost'}`}>{skillEntry.length > 14 ? 'Too many skills' : 'Continue'}</button>
             }
         </div>
     )
