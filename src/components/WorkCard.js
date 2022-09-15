@@ -7,8 +7,8 @@ const WorkCard = ({ workPlace, position, startYear, finishYear, workExperience, 
     }
 
     return (
-        <li className={`${tasks.length > 0 ? 'grid grid-cols-1 grid-rows-4 place-items-center gap-1' : 'flex flex-row items-center justify-between' } w-96 bg-slate-50 rounded-lg p-5 card`}>
-            <div className={`${tasks.length > 0 ? 'row-span-1 text-center' : '' }`}>
+        <li className={`${tasks.length > 0 ? 'flex flex-col gap-2' : 'flex flex-row items-center justify-between' } w-96 bg-slate-50 rounded-lg p-5 card`}>
+            <div className={`${tasks.length > 0 ? 'mb-2 text-center' : '' }`}>
                 <h3 className="text-lg uppercase text-gray-600">
                     {position}
                 </h3>
@@ -26,7 +26,7 @@ const WorkCard = ({ workPlace, position, startYear, finishYear, workExperience, 
                     ))}
                 </ul>
             }   
-            <button onClick={handleClick} className={`btn btn-circle btn-outline ${tasks.length > 0 ? 'mt-2' : ''}`}>
+            <button onClick={handleClick} className={`btn btn-circle btn-outline ${tasks.length > 0 ? 'mx-auto mt-2' : ''}`}>
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
             </button>
         </li>
