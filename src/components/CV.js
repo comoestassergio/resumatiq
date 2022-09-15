@@ -131,6 +131,11 @@ const CV = (props) => {
                     </section>
                 }
             </div>
+            <footer className="absolute bottom-10 left-1/2 -translate-x-1/2 print:hidden">
+                <kbd class="kbd">ctrl</kbd>
+                +
+                <kbd class="kbd">p</kbd>
+            </footer>
         </div>
     )
 }
