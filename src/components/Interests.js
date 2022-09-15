@@ -64,7 +64,7 @@ const Interests = ({ userData, setUserData, setInterestsDone, setWorkDone }) => 
                 }
             </form>
             {interestEntry.length > 0 &&
-                <button onClick={handleContinue} className="btn btn-ghost">Continue</button>
+                 <button onClick={handleContinue} className={`btn ${interestEntry.length > 14 ? 'btn-disabled' : 'btn-ghost'}`}>{interestEntry.length > 14 ? 'Too many interests' : 'Continue'}</button>
             }
             {interestEntry.length < 1 &&
                 <button onClick={handleContinue} className="btn btn-ghost">Skip</button>
