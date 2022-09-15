@@ -14,23 +14,17 @@ const Tasks = ({ isClicked, setIsClicked, setWorkEntry, workEntry, workExperienc
     }
 
     const handleAddTask = () => {
-        setTaskEntry(taskEntry.concat({
-            task: input,
-            id: uniqid(),
-        }))
-        setWorkEntry({
-            ...workEntry,
-            tasks: taskEntry,
-        })
+        setTaskEntry(() => (taskEntry.concat({task: input, id: uniqid()})))
         setInput('')
     }
 
     const handleContinue = () => {
-        // setWorkEntry({
-        //     ...workEntry,
-        //     tasks: taskEntry,
-        // })
-        setWorkExperience(workExperience.concat(workEntry))
+        const tempWorkEntry = {
+            ...workEntry,
+            tasks: taskEntry,
+        } 
+        setWorkEntry(() => (tempWorkEntry))
+        setWorkExperience(() => (workExperience.concat(tempWorkEntry)))
         setIsClicked(!isClicked)
     }
 
