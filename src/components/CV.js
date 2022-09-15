@@ -131,7 +131,7 @@ const CV = (props) => {
                     </section>
                 }
             </div>
-            <footer className="absolute bottom-10 left-1/2 -translate-x-1/2 print:hidden">
+            <footer className="absolute bottom-10 left-1/2 -translate-x-1/2 hidden">
                 <kbd className="kbd">ctrl</kbd>
                 +
                 <kbd className="kbd">p</kbd>
