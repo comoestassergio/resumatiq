@@ -74,13 +74,13 @@ const CV = (props) => {
                 }
             </div>
             <div className="grid grid-cols-2 mt-8 gap-x-10 gap-y-8">
-                <section className={`flex flex-col gap-2 col-span-2 md:col-span-1 ${data.workExperience.length > 1 ? 'row-span-2' : 'row-span-1'}`}>
+                <section className={`flex flex-col gap-2 col-span-2 md:col-span-1 ${data.workExperience.length > 1 ? 'row-span-1' : 'row-span-1'} print:col-span-1`}>
                     <h2 className="text-2xl font-bold uppercase mb-1">Experience</h2>
 
                     {data.workExperience.map(el => (
-                        <div key={el.id} className="flex flex-col gap-1 border-2 border-solid border-gray-300 rounded-lg p-5">
-                            <p className="text-xl uppercase text-gray-600">{el.position}</p>
-                            <p className="text-lg font-bold capitalize">{el.workPlace}</p>
+                        <div key={el.id} className="flex flex-col gap-1 border-2 border-solid border-gray-300 rounded-lg p-5 print:p-4">
+                            <p className="text-xl uppercase text-gray-600 print:text-lg">{el.position}</p>
+                            <p className="text-lg font-bold capitalize print:text-sm">{el.workPlace}</p>
                             <p className="flex gap-2 text-sm items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
@@ -97,20 +97,20 @@ const CV = (props) => {
                         </div>
                     ))}
                 </section>
-                <section className="col-span-2 md:col-span-1">
+                <section className="col-span-2 md:col-span-1 print:col-span-1">
                     <h2 className="text-2xl font-bold uppercase mb-1">Skills</h2>
                     <ul className="flex flex-row gap-3 mt-3 flex-wrap">
                         {data.skills.map(el => (
-                            <li key={el.id} className="border-2 border-gray-300 capitalize px-5 py-2 rounded-lg">{el.skill}</li>
+                            <li key={el.id} className="border-2 border-gray-300 capitalize px-5 py-2 rounded-lg print:px-2 print:py-0.5 print:text-sm">{el.skill}</li>
                         ))}
                     </ul>
                 </section>
-                <section className="flex flex-col gap-2 col-span-2 md:col-span-1">
+                <section className="flex flex-col gap-2 col-span-2 md:col-span-1 print:col-span-1">
                     <h2 className="text-2xl font-bold uppercase mb-1">Education</h2>
                     {data.education.map(el => (
-                        <div key={el.id} className="flex flex-col gap-1 border-2 border-gray-300 rounded-lg p-5">
-                            <p className="text-xl uppercase text-gray-600">{el.university}</p>
-                            <p className="text-lg capitalize font-bold">{el.degree}</p>
+                        <div key={el.id} className="flex flex-col gap-1 border-2 border-gray-300 rounded-lg p-5 print:p-4">
+                            <p className="text-xl uppercase text-gray-600 print:text-lg">{el.degree}</p>
+                            <p className="text-lg capitalize font-bold print:text-sm">{el.university}</p>
                             <p className="flex gap-2 text-sm items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
@@ -121,11 +121,11 @@ const CV = (props) => {
                     ))}
                 </section>
                 {data.interests.length > 0 &&
-                    <section className="col-span-2 md:col-span-1">
+                    <section className=" col-start-1 row-start-2 col-span-2 md:col-span-1 print:col-span-1 ">
                          <h2 className="text-2xl font-bold uppercase mb-4">Interests</h2>
                          <ul className="flex gap-3 flex-wrap">
                             {data.interests.map(el => (
-                                <li key={el.id} className='border-2 border-gray-300 capitalize px-5 py-2 rounded-lg'>{el.interest}</li>
+                                <li key={el.id} className='border-2 border-gray-300 capitalize px-5 py-2 rounded-lg print:px-2 print:py-0.5 print:text-sm'>{el.interest}</li>
                             ))}
                          </ul>
                     </section>
