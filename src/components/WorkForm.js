@@ -37,20 +37,18 @@ const WorkForm = ( { workExperience, setWorkExperience, setIsClicked, isClicked}
         if (
             workEntry.workPlace.length > 0 &&
             workEntry.position.length > 0 &&
-            workEntry.startYear.length > 3 &&
-            workEntry.startYear.length < 5 &&
-            workEntry.finishYear.length > 3 &&
-            workEntry.finishYear.length < 5
+            workEntry.startYear.length === 4 &&
+            workEntry.finishYear.length === 4
         ){
-                return true
+            return true
             }
         else if (
-            typeof workEntry.finishYear === 'string'
+            workEntry.finishYear === 'Present'
         ){
             return true
         }
         else {
-                return false
+            return false
         }
     }
 
@@ -82,7 +80,9 @@ const WorkForm = ( { workExperience, setWorkExperience, setIsClicked, isClicked}
     const [openTasks, setOpenTasks] = useState(false)
 
     const handleOpenTasks = () => {
-        setOpenTasks(!openTasks)
+        if (formValidator()){
+            setOpenTasks(!openTasks)
+        }
     }
 
     if (openTasks) {
@@ -94,6 +94,8 @@ const WorkForm = ( { workExperience, setWorkExperience, setIsClicked, isClicked}
                 workEntry={workEntry}
                 workExperience={workExperience}
                 setWorkExperience={setWorkExperience}
+                setOpenTasks={setOpenTasks}
+                openTasks={openTasks}
             />
         )
     }
@@ -148,7 +150,7 @@ const WorkForm = ( { workExperience, setWorkExperience, setIsClicked, isClicked}
                 </button>
             </div>
 
-            <button onClick={handleOpenTasks} type="button" className="btn btn-accent w-80">+ responsibilities</button>
+            <button onClick={handleOpenTasks} type="button" className={`btn ${formValidator() ? 'btn-accent' : 'btn-disabled'} w-80`}>+ responsibilities</button>
 
             <button type="submit" className="btn w-80">
                 Add
