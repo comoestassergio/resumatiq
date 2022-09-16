@@ -1,4 +1,4 @@
-# Résumatic
+# Résumatiq
 
 *Creating résumés made as easy as never before.* 
 
