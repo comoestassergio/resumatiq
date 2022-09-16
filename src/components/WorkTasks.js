@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import uniqid from 'uniqid'
 import WorkTaskCard from "./WorkTaskCard";
 
-const Tasks = ({ isClicked, setIsClicked, setWorkEntry, workEntry, workExperience, setWorkExperience }) => {
+const Tasks = ({ isClicked, setIsClicked, setWorkEntry, workEntry, workExperience, setWorkExperience, setOpenTasks, openTasks }) => {
 
     const initialTasks = []
 
@@ -30,6 +30,10 @@ const Tasks = ({ isClicked, setIsClicked, setWorkEntry, workEntry, workExperienc
 
     const preventDefault = (e) => {
         e.preventDefault()
+    }
+
+    const handleCancel = () => {
+        setOpenTasks(!openTasks)
     }
 
     return (
@@ -80,6 +84,9 @@ const Tasks = ({ isClicked, setIsClicked, setWorkEntry, workEntry, workExperienc
                     {taskEntry.length > 6 ? 'Too many tasks' : 'Continue'}
                 </button>
             }
+            <button onClick={handleCancel} type="button" className="btn btn-ghost hover:bg-transparent hover:text-red-400 w-80">
+                Cancel
+            </button>
         </div>
     )
 }
