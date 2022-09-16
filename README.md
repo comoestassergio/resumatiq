@@ -1,4 +1,4 @@
-# Résumé Creator
+# Résumatic
 
 *Creating résumés made as easy as never before.* 
 
