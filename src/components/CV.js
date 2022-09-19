@@ -97,7 +97,7 @@ const CV = (props) => {
                                 {el.startYear} - {el.finishYear}
                             </p>
                             {el.tasks.length > 0 &&
-                                <ul className="list-disc ml-5 mt-2">
+                                <ul className="flex flex-col gap-1 list-disc ml-5 mt-2">
                                     {el.tasks.map(item => (
                                         <li key={item.id}>{item.task}</li>
                                     ))}
