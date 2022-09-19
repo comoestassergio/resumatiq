@@ -26,6 +26,7 @@ const Socials = ({ formValues, setFormValues }) => {
                     name="telegram"
                     className="input input-bordered w-full max-w-xs col-span-2 m-auto sm:col-span-1"
                     value={formValues.telegram} 
+                    pattern={/(https:\/\/)*(t\.me\/)[a-z0-9-]+/}
                 />
             </li>
             <li className="flex items-center justify-center gap-3">
@@ -37,6 +38,7 @@ const Socials = ({ formValues, setFormValues }) => {
                     name="linkedin"
                     className="input input-bordered w-full max-w-xs col-span-2 m-auto sm:col-span-1" 
                     value={formValues.linkedin}
+                    pattern={/(https:\/\/)*(www\.linkedin\.com\/)[a-z]+\/[a-z0-9-\/]+/}
                 />
             </li>
             <li className="flex items-center justify-center gap-3">
@@ -48,6 +50,7 @@ const Socials = ({ formValues, setFormValues }) => {
                     name="github"
                     className="input input-bordered w-full max-w-xs col-span-2 m-auto sm:col-span-1"
                     value={formValues.github}
+                    pattern={/(https:\/\/)*(github\.com\/)[a-z0-9]+/}
                     />
             </li>
             <li className="flex items-center justify-center gap-3">
@@ -59,6 +62,7 @@ const Socials = ({ formValues, setFormValues }) => {
                     name="twitter"
                     className="input input-bordered w-full max-w-xs col-span-2 m-auto sm:col-span-1"
                     value={formValues.twitter} 
+                    pattern={/(https:\/\/)*(twitter\.com\/)[a-z0-9-/]+/}
                 />
             </li>
         </ul>
