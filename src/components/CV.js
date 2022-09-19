@@ -5,6 +5,45 @@ const CV = (props) => {
         ...props.userData
     }
 
+    const telegramFormatter = (url) => {
+        const re = /(?<=((https:\/\/){0,1}t\.me\/))[a-zA-Z0-9]+/
+        const slug = url.match(re)[0]
+        const result = '@'.concat(slug)
+
+        return result
+    }
+
+    const gitHubFormatter = (url) => {
+        const re = /(?<=((https:\/\/){0,1}github\.com\/))[a-zA-Z0-9]+/
+        const result = url.match(re)[0]
+
+        return result
+    }
+
+    const twitterFormatter = (url) => {
+        const re = /(?<=((https:\/\/){0,1}twitter\.com\/))[a-zA-Z0-9]+/
+        const slug = url.match(re)[0]
+        const result = '@'.concat(slug)
+
+        return result
+    }
+
+    const webSiteFormatter = (url) => {
+        const re = /(?<=(https:\/\/){0,1}).+/
+        const result = url.match(re)[0]
+
+        return result
+    }
+
+    const addProtocol = (url) => {
+        const re = /(https:\/\/)/
+        const protocol = 'https://'
+        if (!re.test(url)){
+            return protocol.concat(url)
+        }
+        return url
+    }
+
     return (
         <div className="min-h-screen bg-base-100 py-5 px-7 lg:max-w-5xl lg:mx-auto">
             <div className="flex flex-col gap-2 mb-4 relative after:absolute after:w-full after:bg-gray-400 after:h-0.5 after:bottom-0">
@@ -38,7 +77,7 @@ const CV = (props) => {
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
                         </svg>
-                    {data.website}
+                        <a href={addProtocol(data.website)}>{webSiteFormatter(data.website)}</a>
                     </p>
                     : <></> 
                 }
@@ -50,7 +89,7 @@ const CV = (props) => {
                                 <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2S2 6.477 2 12s4.477 10 10 10Z"/>
                             </g>
                         </svg>
-                    {data.telegram}
+                        <a href={addProtocol(data.telegram)} target={"_blank"}>{telegramFormatter(data.telegram)}</a>
                     </p>
                     : <></> 
                 }
@@ -59,7 +98,7 @@ const CV = (props) => {
                         <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
                             <path fill="currentColor" fillRule="evenodd" d="M1 2.838A1.838 1.838 0 0 1 2.838 1H21.16A1.837 1.837 0 0 1 23 2.838V21.16A1.838 1.838 0 0 1 21.161 23H2.838A1.838 1.838 0 0 1 1 21.161V2.838Zm8.708 6.55h2.979v1.496c.43-.86 1.53-1.634 3.183-1.634c3.169 0 3.92 1.713 3.92 4.856v5.822h-3.207v-5.106c0-1.79-.43-2.8-1.522-2.8c-1.515 0-2.145 1.089-2.145 2.8v5.106H9.708V9.388Zm-5.5 10.403h3.208V9.25H4.208v10.54ZM7.875 5.812a2.063 2.063 0 1 1-4.125 0a2.063 2.063 0 0 1 4.125 0Z" clipRule="evenodd"/>
                         </svg>
-                    {data.linkedin}
+                        <a href={addProtocol(data.linkedin)} target={'_blank'}>{data.firstName} {data.lastName}</a>
                     </p>
                     : <></>
                 }
@@ -68,7 +107,7 @@ const CV = (props) => {
                         <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
                             <path fill="currentColor" fillRule="evenodd" d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385c.6.105.825-.255.825-.57c0-.285-.015-1.23-.015-2.235c-3.015.555-3.795-.735-4.035-1.41c-.135-.345-.72-1.41-1.23-1.695c-.42-.225-1.02-.78-.015-.795c.945-.015 1.62.87 1.845 1.23c1.08 1.815 2.805 1.305 3.495.99c.105-.78.42-1.305.765-1.605c-2.67-.3-5.46-1.335-5.46-5.925c0-1.305.465-2.385 1.23-3.225c-.12-.3-.54-1.53.12-3.18c0 0 1.005-.315 3.3 1.23c.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23c.66 1.65.24 2.88.12 3.18c.765.84 1.23 1.905 1.23 3.225c0 4.605-2.805 5.625-5.475 5.925c.435.375.81 1.095.81 2.22c0 1.605-.015 2.895-.015 3.3c0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12Z" clipRule="evenodd"/>
                         </svg>
-                    {data.github}
+                        <a href={addProtocol(data.github)} target={'_blank'}>{gitHubFormatter(data.github)}</a>
                     </p>
                     : <></>
                 }
@@ -77,7 +116,7 @@ const CV = (props) => {
                         <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
                             <path fill="currentColor" d="M23.643 4.937c-.835.37-1.732.62-2.675.733a4.67 4.67 0 0 0 2.048-2.578a9.3 9.3 0 0 1-2.958 1.13a4.66 4.66 0 0 0-7.938 4.25a13.229 13.229 0 0 1-9.602-4.868c-.4.69-.63 1.49-.63 2.342A4.66 4.66 0 0 0 3.96 9.824a4.647 4.647 0 0 1-2.11-.583v.06a4.66 4.66 0 0 0 3.737 4.568a4.692 4.692 0 0 1-2.104.08a4.661 4.661 0 0 0 4.352 3.234a9.348 9.348 0 0 1-5.786 1.995a9.5 9.5 0 0 1-1.112-.065a13.175 13.175 0 0 0 7.14 2.093c8.57 0 13.255-7.098 13.255-13.254c0-.2-.005-.402-.014-.602a9.47 9.47 0 0 0 2.323-2.41l.002-.003Z"/>
                         </svg>
-                    {data.twitter}
+                        <a href={addProtocol(data.twitter)} target={'_blank'}>{twitterFormatter(data.twitter)}</a>
                     </p>
                     : <></>
                 }
