@@ -41,7 +41,7 @@ const Personal = ({userData, setUserData, setPersonalDone, setStart}) => {
                     className='input input-bordered w-full max-w-xs col-span-2 m-auto sm:col-span-1' 
                     value={formValues.firstName}
                     pattern={'[a-zA-Z]+'} 
-                    title={'First name must be no longer than 30 characters and contain letters of the latin alphabet only'}
+                    title={'Latin alphabet only, max 30 characters'}
                     maxLength={30}
                     required
                 />
@@ -53,7 +53,7 @@ const Personal = ({userData, setUserData, setPersonalDone, setStart}) => {
                     className="input input-bordered w-full max-w-xs col-span-2 m-auto sm:col-span-1" 
                     value={formValues.lastName}
                     pattern={'[a-zA-Z]+'} 
-                    title={'Last name must be no longer than 30 characters and contain letters of the latin alphabet only'}
+                    title={'Latin alphabet only, max 30 characters'}
                     maxLength={30}
                     required
                 />
@@ -65,7 +65,7 @@ const Personal = ({userData, setUserData, setPersonalDone, setStart}) => {
                     className="input input-bordered w-full max-w-xs col-span-2 m-auto sm:col-span-1" 
                     value={formValues.email}
                     pattern={'[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z]+'}
-                    title={'Email must be of format: example@mail.com'}
+                    title={'example@mail.com'}
                     maxLength={50}
                     required
                 />
@@ -78,7 +78,7 @@ const Personal = ({userData, setUserData, setPersonalDone, setStart}) => {
                     value={formValues.number}
                     minLength={10}
                     maxLength={16}
-                    title={'Phone number must not be shorter than 10 digits or longer than 16'}
+                    title={'Min 10 digits, max 16 digits'}
                     required
                 />
                 <input 
@@ -89,7 +89,7 @@ const Personal = ({userData, setUserData, setPersonalDone, setStart}) => {
                     className="input input-bordered w-full max-w-xs col-span-2 m-auto sm:col-span-1"
                     value={formValues.website} 
                     pattern={'(https:\/\/){0,1}(www\.){0,1}([a-z]+)(\.[a-z]+)(\.[a-z]+){0,3}'}
-                    title={'Website must be of format: example.com (https:// and www. are optional)'}
+                    title={'example.com (https:// and www. are optional)'}
                     maxLength={30}
                 />
                 <input 
@@ -100,7 +100,7 @@ const Personal = ({userData, setUserData, setPersonalDone, setStart}) => {
                     className="input input-bordered w-full max-w-xs col-span-2 m-auto sm:col-span-1"
                     value={formValues.address} 
                     pattern={'[a-zA-Z]+,( ){0,1}[a-zA-Z]+'}
-                    title={'City and country should be separated with a comma and 0 or 1 space and amount to no more than 50 characters'}
+                    title={'City and country separated with a comma and 0 or 1 space, max 50 characters'}
                     maxLength={50}
                     required
                 />
