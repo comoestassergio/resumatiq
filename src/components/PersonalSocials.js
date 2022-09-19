@@ -21,48 +21,52 @@ const Socials = ({ formValues, setFormValues }) => {
                 <img src={telegram} alt="Telegram" width={30}/>
                 <input 
                     onChange={handleInput}
-                    type="url" 
+                    type="text" 
                     placeholder="Telegram (opt.)" 
                     name="telegram"
                     className="input input-bordered w-full max-w-xs col-span-2 m-auto sm:col-span-1"
                     value={formValues.telegram} 
-                    pattern={/(https:\/\/)*(t\.me\/)[a-z0-9-]+/}
+                    pattern={'(https:\/\/)*(t\.me\/)[a-z0-9-]+'}
+                    title={'t.me/username (https:// is optional)'}
                 />
             </li>
             <li className="flex items-center justify-center gap-3">
                 <img src={linkedin} alt="LinkedIn" width={30}/>
                 <input 
                     onChange={handleInput}
-                    type="url" 
+                    type="text" 
                     placeholder="LinkedIn (opt.)" 
                     name="linkedin"
                     className="input input-bordered w-full max-w-xs col-span-2 m-auto sm:col-span-1" 
                     value={formValues.linkedin}
-                    pattern={/(https:\/\/)*(www\.linkedin\.com\/)[a-z]+\/[a-z0-9-\/]+/}
+                    pattern={'(https:\/\/)*(www\.linkedin\.com\/)[a-z]+\/[a-z0-9-\/]+'}
+                    title={'www.linkedin.com/*** (https:// is optional)'}
                 />
             </li>
             <li className="flex items-center justify-center gap-3">
                 <img src={github} alt="GitHub" width={30}/>
                 <input
                     onChange={handleInput} 
-                    type="url" 
+                    type="text" 
                     placeholder="GitHub (opt.)" 
                     name="github"
                     className="input input-bordered w-full max-w-xs col-span-2 m-auto sm:col-span-1"
                     value={formValues.github}
-                    pattern={/(https:\/\/)*(github\.com\/)[a-z0-9]+/}
+                    pattern={'(https:\/\/)*(github\.com\/)[a-z0-9]+'}
+                    title={'github.com/username (https:// is optional)'}
                     />
             </li>
             <li className="flex items-center justify-center gap-3">
                 <img src={twitter} alt="Twitter" width={30}/>
                 <input 
                     onChange={handleInput}
-                    type="url" 
+                    type="text" 
                     placeholder="Twitter (opt.)" 
                     name="twitter"
                     className="input input-bordered w-full max-w-xs col-span-2 m-auto sm:col-span-1"
                     value={formValues.twitter} 
-                    pattern={/(https:\/\/)*(twitter\.com\/)[a-z0-9-/]+/}
+                    pattern={'(https:\/\/)*(twitter\.com\/)[a-z0-9-/]+'}
+                    title={'twitter.com/username (https:// is optional)'}
                 />
             </li>
         </ul>
