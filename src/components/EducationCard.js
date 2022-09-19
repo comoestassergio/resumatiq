@@ -7,7 +7,7 @@ const EducationCard = ({ university, degree, startYear, gradYear, education, set
     }
 
     return (
-        <li className="flex flex-row items-center justify-between w-80 bg-slate-50 rounded-lg p-5 card">
+        <li className="flex flex-row items-center justify-between w-96 bg-slate-50 rounded-lg p-5 card">
             <div>
                 <h3 className="text-lg uppercase font-bold">
                     {university}
