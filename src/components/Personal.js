@@ -39,7 +39,9 @@ const Personal = ({userData, setUserData, setPersonalDone, setStart}) => {
                     placeholder="First Name"
                     name="firstName" 
                     className='input input-bordered w-full max-w-xs col-span-2 m-auto sm:col-span-1' 
-                    value={formValues.firstName} 
+                    value={formValues.firstName}
+                    pattern={/[a-zA-Z]+/} 
+                    maxLength={30}
                     required
                 />
                 <input 
@@ -49,6 +51,8 @@ const Personal = ({userData, setUserData, setPersonalDone, setStart}) => {
                     name="lastName"
                     className="input input-bordered w-full max-w-xs col-span-2 m-auto sm:col-span-1" 
                     value={formValues.lastName}
+                    pattern={/[a-zA-Z]+/} 
+                    maxLength={30}
                     required
                 />
                 <input 
@@ -58,6 +62,8 @@ const Personal = ({userData, setUserData, setPersonalDone, setStart}) => {
                     name="email"
                     className="input input-bordered w-full max-w-xs col-span-2 m-auto sm:col-span-1" 
                     value={formValues.email}
+                    pattern={/[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z]+/}
+                    maxLength={50}
                     required
                 />
                 <input 
@@ -67,6 +73,8 @@ const Personal = ({userData, setUserData, setPersonalDone, setStart}) => {
                     name="number"
                     className="input input-bordered w-full max-w-xs col-span-2 m-auto sm:col-span-1" 
                     value={formValues.number}
+                    minLength={10}
+                    maxLength={12}
                     required
                 />
                 <input 
@@ -76,14 +84,18 @@ const Personal = ({userData, setUserData, setPersonalDone, setStart}) => {
                     name="website"
                     className="input input-bordered w-full max-w-xs col-span-2 m-auto sm:col-span-1"
                     value={formValues.website} 
+                    pattern={/[a-z]+\.[a-z]+/}
+                    maxLength={30}
                 />
                 <input 
                     onChange={handleChange} 
                     type="text" 
-                    placeholder="City" 
-                    name="address"
+                    placeholder="City, Country" 
+                    name="city"
                     className="input input-bordered w-full max-w-xs col-span-2 m-auto sm:col-span-1"
                     value={formValues.address} 
+                    pattern={/[a-zA-Z]+,\s*[a-zA-Z]+/}
+                    maxLength={50}
                     required
                 />
                 {addSocials? <Socials setFormValues={setFormValues} formValues={formValues}/> : <></>}
