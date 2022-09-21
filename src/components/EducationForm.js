@@ -69,7 +69,8 @@ const EducationForm = ( { education, setEducation, setIsClicked, isClicked } ) =
                 value.length !== 4 ? e.target.classList.add('input-error') : e.target.classList.remove('input-error')
                 break
             default: 
-                console.log('default')
+                let error = new Error()
+                console.log(error)
                 break
         }
     } 
