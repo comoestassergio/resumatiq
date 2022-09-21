@@ -65,6 +65,9 @@ const EducationForm = ( { education, setEducation, setIsClicked, isClicked } ) =
             case 'startYear':
                 value.length !== 4 ? e.target.classList.add('input-error') : e.target.classList.remove('input-error')
                 break
+            case 'graduationYear':
+                value.length !== 4 ? e.target.classList.add('input-error') : e.target.classList.remove('input-error')
+                break
             default: 
                 console.log('default')
                 break
