@@ -7,7 +7,7 @@ const WorkCard = ({ workPlace, position, startYear, finishYear, workExperience, 
     }
 
     return (
-        <li className={`${tasks.length > 0 ? 'flex flex-col gap-2' : 'flex flex-row items-center justify-between' } w-96 bg-slate-50 rounded-lg p-5 card`}>
+        <li className={`${tasks.length > 0 ? 'flex flex-col gap-2' : 'flex flex-row items-center justify-between' } w-80 sm:w-96 bg-slate-50 rounded-lg p-5 card`}>
             <div className={`${tasks.length > 0 ? 'mb-2 text-center' : '' }`}>
                 <h3 className="text-lg uppercase text-gray-600">
                     {position}
