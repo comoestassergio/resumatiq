@@ -23,6 +23,8 @@ const WorkForm = ( { workExperience, setWorkExperience, setIsClicked, isClicked}
                 id: uniqid(),
             }
         )
+
+        checkEmptyInput(name, value, e)
     }
 
     const handleSubmit = (e) => {
@@ -84,6 +86,27 @@ const WorkForm = ( { workExperience, setWorkExperience, setIsClicked, isClicked}
             setOpenTasks(!openTasks)
         }
     }
+
+    const checkEmptyInput = (name, value, e) => {
+        switch (name) {
+            case 'workPlace':
+                value.length < 1 ? e.target.classList.add('input-error') : e.target.classList.remove('input-error')
+                break
+            case 'position':
+                value.length < 1 ? e.target.classList.add('input-error') : e.target.classList.remove('input-error')
+                break
+            case 'startYear':
+                value.length !== 4 ? e.target.classList.add('input-error') : e.target.classList.remove('input-error')
+                break
+            case 'finishYear':
+                value.length !== 4 ? e.target.classList.add('input-error') : e.target.classList.remove('input-error')
+                break
+            default: 
+                let error = new Error()
+                console.log(error)
+                break
+        }
+    } 
 
     if (openTasks) {
         return (
