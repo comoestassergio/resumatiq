@@ -89,7 +89,7 @@ const Personal = ({userData, setUserData, setPersonalDone, setStart}) => {
                     className="input input-bordered w-full max-w-xs col-span-2 m-auto sm:col-span-1"
                     value={formValues.website} 
                     pattern={'(https:\/\/){0,1}(www\.){0,1}([a-z]+)(\.[a-z]+)(\.[a-z]+){0,3}'}
-                    title={'example.com (https:// and www. are optional)'}
+                    title={'example.com'}
                     maxLength={30}
                 />
                 <input 
