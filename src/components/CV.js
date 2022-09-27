@@ -136,7 +136,7 @@ const CV = (props) => {
                             {el.tasks.length > 0 &&
                                 <ul className="flex flex-col gap-1 list-disc ml-5 mt-2">
                                     {el.tasks.map(item => (
-                                        <li key={item.id}>{item.task}</li>
+                                        <li key={item.id} className='first-letter:capitalize'>{item.task}</li>
                                     ))}
                                 </ul>
                             }
