@@ -27,7 +27,7 @@ const Socials = ({ formValues, setFormValues }) => {
                     className="input input-bordered w-full max-w-xs col-span-2 m-auto sm:col-span-1"
                     value={formValues.telegram} 
                     pattern={'(https:\/\/)*(t\.me\/)[a-z0-9-]+'}
-                    title={'t.me/username (https:// is optional)'}
+                    title={'t.me/username'}
                 />
             </li>
             <li className="flex items-center justify-center gap-3">
@@ -40,7 +40,7 @@ const Socials = ({ formValues, setFormValues }) => {
                     className="input input-bordered w-full max-w-xs col-span-2 m-auto sm:col-span-1" 
                     value={formValues.linkedin}
                     pattern={'(https:\/\/)*(www\.linkedin\.com\/)[a-z]+\/[a-z0-9-\/]+'}
-                    title={'www.linkedin.com/*** (https:// is optional)'}
+                    title={'linkedin.com/***'}
                 />
             </li>
             <li className="flex items-center justify-center gap-3">
@@ -53,7 +53,7 @@ const Socials = ({ formValues, setFormValues }) => {
                     className="input input-bordered w-full max-w-xs col-span-2 m-auto sm:col-span-1"
                     value={formValues.github}
                     pattern={'(https:\/\/)*(github\.com\/)[a-z0-9]+'}
-                    title={'github.com/username (https:// is optional)'}
+                    title={'github.com/username'}
                     />
             </li>
             <li className="flex items-center justify-center gap-3">
@@ -66,7 +66,7 @@ const Socials = ({ formValues, setFormValues }) => {
                     className="input input-bordered w-full max-w-xs col-span-2 m-auto sm:col-span-1"
                     value={formValues.twitter} 
                     pattern={'(https:\/\/)*(twitter\.com\/)[a-z0-9-/]+'}
-                    title={'twitter.com/username (https:// is optional)'}
+                    title={'twitter.com/username'}
                 />
             </li>
         </ul>
