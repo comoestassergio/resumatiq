@@ -25,7 +25,7 @@ const Title = ({ userData, setUserData, setTitleDone, setInterestsDone }) => {
 
     return (
         <div className="flex flex-col items-center justify-center gap-5 min-h-screen bg-base-200">
-            <form onSubmit={handleFinish} className="flex gap-2">
+            <form onSubmit={handleFinish} className="flex flex-col gap-2">
                 <input
                     onChange={handleInput} 
                     type="text" 
@@ -36,10 +36,10 @@ const Title = ({ userData, setUserData, setTitleDone, setInterestsDone }) => {
                     maxLength={45}
                     required
                 />
+                {input.length > 0 &&
+                <button type="submit" className="btn btn-secondary">Finish</button>
+                }
             </form>
-            {input.length > 0 &&
-                <button type="submit" className="btn btn-primary">Finish</button>
-            }
         </div>
     )
 }
