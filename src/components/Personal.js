@@ -64,7 +64,7 @@ const Personal = ({userData, setUserData, setPersonalDone, setStart}) => {
                     name="email"
                     className="input input-bordered w-full max-w-xs col-span-2 m-auto sm:col-span-1" 
                     value={formValues.email}
-                    pattern={'[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z]+'}
+                    pattern={'[a-zA-Z0-9]+(\.[a-zA-Z0-9]+)*@[a-zA-Z]+\.[a-zA-Z]+'}
                     title={'example@mail.com'}
                     maxLength={50}
                     required
