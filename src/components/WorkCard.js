@@ -20,7 +20,7 @@ const WorkCard = ({ workPlace, position, startYear, finishYear, workExperience, 
                 </p>
             </div>
             {tasks.length > 0 && 
-                <ul className="row-span-2 flex flex-col gap-2 text-gray-700">
+                <ul className="row-span-2 flex flex-col gap-2 text-gray-700 md:flex-grow md:justify-center">
                     {tasks.map(el => (
                         <li key={el.id} className="border-2 border-gray-300 rounded-lg border-dotted p-2 first-letter:capitalize">{el.task}</li>
                     ))}
