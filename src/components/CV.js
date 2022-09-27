@@ -27,8 +27,8 @@ const CV = (props) => {
     }
 
     const webSiteFormatter = (url) => {
-        const re = /(?:https?|ftp):\/\/(.+)/
-        const result = url.match(re)[1]
+        const re = /[a-z]+\.[a-z]+(\.[a-z]+)*/
+        const result = url.match(re)[0]
 
         return result
     }
@@ -172,11 +172,6 @@ const CV = (props) => {
                     </section>
                 }
             </div>
-            <footer className="absolute bottom-10 left-1/2 -translate-x-1/2 hidden">
-                <kbd className="kbd">ctrl</kbd>
-                +
-                <kbd className="kbd">p</kbd>
-            </footer>
         </div>
     )
 }
