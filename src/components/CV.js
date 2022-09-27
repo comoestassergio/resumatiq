@@ -6,31 +6,29 @@ const CV = (props) => {
     }
 
     const telegramFormatter = (url) => {
-        const re = /(?<=((https:\/\/){0,1}t\.me\/))[a-zA-Z0-9]+/
-        const slug = url.match(re)[0]
-        const result = '@'.concat(slug)
+        const re = /(?:(t\.me\/))[a-zA-Z0-9]+/
+        const result = url.match(re)[0]
 
         return result
     }
 
     const gitHubFormatter = (url) => {
-        const re = /(?<=((https:\/\/){0,1}github\.com\/))[a-zA-Z0-9]+/
+        const re = /(?:(github\.com\/))[a-zA-Z0-9]+/
         const result = url.match(re)[0]
 
         return result
     }
 
     const twitterFormatter = (url) => {
-        const re = /(?<=((https:\/\/){0,1}twitter\.com\/))[a-zA-Z0-9]+/
-        const slug = url.match(re)[0]
-        const result = '@'.concat(slug)
+        const re = /(?:(twitter\.com\/))[a-zA-Z0-9]+/
+        const result = url.match(re)[0]
 
         return result
     }
 
     const webSiteFormatter = (url) => {
-        const re = /(?<=(https:\/\/){0,1}).+/
-        const result = url.match(re)[0]
+        const re = /(?:https?|ftp):\/\/(.+)/
+        const result = url.match(re)[1]
 
         return result
     }
