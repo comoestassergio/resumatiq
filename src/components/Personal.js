@@ -90,7 +90,7 @@ const Personal = ({userData, setUserData, setPersonalDone, setStart}) => {
                     value={formValues.website} 
                     pattern={'(https:\/\/){0,1}(www\.){0,1}([a-z]+)(\.[a-z]+)(\.[a-z]+){0,3}'}
                     title={'example.com'}
-                    maxLength={30}
+                    maxLength={50}
                 />
                 <input 
                     onChange={handleChange} 
