@@ -123,7 +123,7 @@ const CV = (props) => {
                     </p>
                 }
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 mt-8 gap-x-10 gap-y-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 mt-8 gap-x-10 gap-y-8 print:grid-cols-2">
                 <div className="flex flex-col gap-5">
                     <section className={`flex flex-col gap-2`}>
                         <h2 className="text-2xl font-bold uppercase mb-1">Experience</h2>
