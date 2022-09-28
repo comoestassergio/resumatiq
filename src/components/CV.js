@@ -198,10 +198,12 @@ const CV = (props) => {
                     </button>
                 </div> 
                 <div>
-                    <p className="flex flex-row gap-1 text-base-200">Copyright © 2022 - All right reserved by 
-                        <a className="font-bold" href="https://github.com/comoestassergio" target={'_blank'} rel={'noreferrer'}>
+                    <p className="text-base-200">Copyright © 2022 - All right reserved by
+                        <span className="ml-1">
+                            <a className="font-bold" href="https://github.com/comoestassergio" target={'_blank'} rel={'noreferrer'}>
                             comoestassergio
-                        </a>
+                            </a>
+                        </span>
                     </p>
                 </div>
             </footer>
