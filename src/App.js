@@ -56,7 +56,16 @@ export default function App() {
     saveToLocalStorage()
 
     return (
-      <CV userData={userData}/>
+      <CV 
+        userData={userData} 
+        setTitleDone={setTitleDone}
+        setInterestsDone={setInterestsDone}
+        setSkillsDone={setSkillsDone}
+        setWorkDone={setWorkDone}
+        setEducationDone={setEducationDone}
+        setPersonalDone={setPersonalDone}
+      
+      />
     )
   }
 
