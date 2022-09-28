@@ -176,6 +176,19 @@ const CV = (props) => {
                     </section>
                 </div>
             </div>
+            <footer className="footer footer-center p-10 mt-5 bg-gray-700 text-base-content rounded-lg print:hidden">
+                <div className="grid grid-flow-col gap-4">
+                    <button className="btn btn-ghost text-base-200">Start Over</button>
+                    <button className="btn btn-primary">Download</button>
+                </div> 
+                <div>
+                    <p className="flex flex-row gap-1 text-base-200">Copyright © 2022 - All right reserved by 
+                        <a className="font-bold" href="https://github.com/comoestassergio" target={'_blank'} rel={'noreferrer'}>
+                            comoestassergio
+                        </a>
+                    </p>
+                </div>
+            </footer>
         </div>
     )
 }
