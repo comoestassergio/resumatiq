@@ -7,12 +7,12 @@ const WorkCard = ({ workPlace, position, startYear, finishYear, workExperience, 
     }
 
     return (
-        <li className={`${tasks.length > 0 ? 'flex flex-col gap-2' : 'flex flex-row items-center justify-between' } w-80 sm:w-96 bg-slate-50 dark:bg-transparent dark:border-2 dark:border-primary rounded-lg p-5 card`}>
+        <li className={`${tasks.length > 0 ? 'flex flex-col gap-2' : 'flex flex-row items-center justify-between' } w-80 sm:w-96 bg-slate-50 dark:bg-transparent dark:border-2 dark:border-gray-500 rounded-lg p-5 card`}>
             <div className={`${tasks.length > 0 ? 'mb-2 text-center' : '' }`}>
-                <h3 className="text-lg uppercase text-gray-600 dark:text-secondary">
+                <h3 className="text-lg uppercase text-gray-600 dark:text-gray-400">
                     {position}
                 </h3>
-                <p className="text-md font-bold mb-1">
+                <p className="text-md font-bold mb-1 text-zinc-500 capitalize">
                     {workPlace}
                 </p>
                 <p className="text-sm text-zinc-600">
@@ -22,7 +22,7 @@ const WorkCard = ({ workPlace, position, startYear, finishYear, workExperience, 
             {tasks.length > 0 && 
                 <ul className="row-span-2 flex flex-col gap-2 text-gray-700 md:flex-grow md:justify-center">
                     {tasks.map(el => (
-                        <li key={el.id} className="border-2 border-gray-300 rounded-lg border-dotted p-2 first-letter:capitalize dark:text-accent">{el.task}</li>
+                        <li key={el.id} className="border-2 border-gray-300 rounded-lg border-dotted p-2 first-letter:capitalize dark:text-gray-400">{el.task}</li>
                     ))}
                 </ul>
             }   

@@ -54,8 +54,8 @@ const CV = (props) => {
     return (
         <div className="min-h-screen bg-base-100 py-5 px-7 lg:max-w-5xl lg:mx-auto">
             <div className="flex flex-col gap-2 mb-4 relative after:absolute after:w-full after:bg-gray-400 after:h-0.5 after:bottom-0">
-                <h1 className="text-5xl capitalize"><span className="text-gray-700">{data.firstName}</span> <span className="font-bold">{data.lastName}</span></h1>
-                <h3 className="text-lg uppercase text-gray-600">{data.title}</h3>
+                <h1 className="text-5xl capitalize"><span className="text-gray-700 dark:text-gray-500">{data.firstName}</span> <span className="font-bold">{data.lastName}</span></h1>
+                <h3 className="text-lg uppercase text-gray-600 dark:text-gray-400">{data.title}</h3>
             </div>
             <div className="flex flex-row gap-3 flex-wrap">
                 <p className="flex flex-row gap-2 items-center capitalize">
@@ -130,7 +130,7 @@ const CV = (props) => {
 
                         {data.workExperience.map(el => (
                             <div key={el.id} className="flex flex-col gap-1 border-2 border-solid border-gray-300 rounded-lg p-5 print:p-4">
-                                <p className="text-xl uppercase text-gray-600 print:text-lg">{el.position}</p>
+                                <p className="text-xl uppercase text-gray-600 print:text-lg dark:text-gray-500">{el.position}</p>
                                 <p className="text-lg font-bold capitalize print:text-sm">{el.workPlace}</p>
                                 <p className="flex gap-2 text-sm items-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
@@ -172,7 +172,7 @@ const CV = (props) => {
                         <h2 className="text-2xl font-bold uppercase mb-1">Education</h2>
                         {data.education.map(el => (
                             <div key={el.id} className="flex flex-col gap-1 border-2 border-gray-300 rounded-lg p-5 print:p-4">
-                                <p className="text-xl uppercase text-gray-600 print:text-lg">{el.degree}</p>
+                                <p className="text-xl uppercase text-gray-600 print:text-lg dark:text-gray-500">{el.degree}</p>
                                 <p className="text-lg capitalize font-bold print:text-sm">{el.university}</p>
                                 <p className="flex gap-2 text-sm items-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
@@ -185,20 +185,20 @@ const CV = (props) => {
                     </section>
                 </div>
             </div>
-            <footer className="footer footer-center p-10 mt-5 bg-gray-700 text-base-content rounded-lg print:hidden">
-                <div className="flex flex-row px-4 py-2 bg-base-300 rounded-lg">
-                    <kbd className="kbd text-black">ctrl</kbd>
+            <footer className="footer footer-center p-10 mt-5 bg-gray-700 dark:bg-gray-900 text-base-content rounded-lg print:hidden">
+                <div className="flex flex-row px-4 py-2 bg-base-300 dark:bg-base-100 rounded-lg">
+                    <kbd className="kbd">ctrl</kbd>
                     +
-                    <kbd className="kbd text-black">p</kbd>
+                    <kbd className="kbd">p</kbd>
                     <p className="text-md capitalize">to save as PDF</p>
                 </div>
                 <div className="grid grid-flow-col gap-4">
-                    <button onClick={handleRestart} className="btn btn-ghost text-base-200">
+                    <button onClick={handleRestart} className="btn btn-ghost text-base-200 dark:text-gray-400">
                         Back To Start
                     </button>
                 </div> 
                 <div>
-                    <p className="text-base-200">Copyright © 2022 - All right reserved by
+                    <p className="text-base-200 dark:text-gray-500">Copyright © 2022 - All right reserved by
                         <span className="ml-1">
                             <a className="font-bold" href="https://github.com/comoestassergio" target={'_blank'} rel={'noreferrer'}>
                             comoestassergio
