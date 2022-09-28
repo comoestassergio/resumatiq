@@ -40,7 +40,7 @@ const Socials = ({ formValues, setFormValues }) => {
                     className="input input-bordered w-full max-w-xs col-span-2 m-auto sm:col-span-1" 
                     value={formValues.linkedin}
                     pattern={'(https:\/\/)*(www\.linkedin\.com\/)[a-z]+\/[a-z0-9-\/]+'}
-                    title={'linkedin.com/***'}
+                    title={'linkedin.com/in/user'}
                 />
             </li>
             <li className="flex items-center justify-center gap-3">
