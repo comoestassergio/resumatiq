@@ -186,9 +186,16 @@ const CV = (props) => {
                 </div>
             </div>
             <footer className="footer footer-center p-10 mt-5 bg-gray-700 text-base-content rounded-lg print:hidden">
+                <div className="flex flex-row px-4 py-2 bg-base-300 rounded-lg">
+                    <kbd className="kbd text-black">ctrl</kbd>
+                    +
+                    <kbd className="kbd text-black">p</kbd>
+                    <p className="text-md capitalize">to save as PDF</p>
+                </div>
                 <div className="grid grid-flow-col gap-4">
-                    <button onClick={handleRestart} className="btn btn-ghost text-base-200">Start Over</button>
-                    <button className="btn btn-primary">Download</button>
+                    <button onClick={handleRestart} className="btn btn-ghost text-base-200">
+                        Back To Start
+                    </button>
                 </div> 
                 <div>
                     <p className="flex flex-row gap-1 text-base-200">Copyright © 2022 - All right reserved by 
