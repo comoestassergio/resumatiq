@@ -42,6 +42,15 @@ const CV = (props) => {
         return url
     }
 
+    const handleRestart = () => {
+        props.setTitleDone(false)
+        props.setInterestsDone(false)
+        props.setSkillsDone(false)
+        props.setWorkDone(false)
+        props.setEducationDone(false)
+        props.setPersonalDone(false)
+    }
+
     return (
         <div className="min-h-screen bg-base-100 py-5 px-7 lg:max-w-5xl lg:mx-auto">
             <div className="flex flex-col gap-2 mb-4 relative after:absolute after:w-full after:bg-gray-400 after:h-0.5 after:bottom-0">
@@ -178,7 +187,7 @@ const CV = (props) => {
             </div>
             <footer className="footer footer-center p-10 mt-5 bg-gray-700 text-base-content rounded-lg print:hidden">
                 <div className="grid grid-flow-col gap-4">
-                    <button className="btn btn-ghost text-base-200">Start Over</button>
+                    <button onClick={handleRestart} className="btn btn-ghost text-base-200">Start Over</button>
                     <button className="btn btn-primary">Download</button>
                 </div> 
                 <div>
