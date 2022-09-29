@@ -49,6 +49,7 @@ const CV = (props) => {
         props.setWorkDone(false)
         props.setEducationDone(false)
         props.setPersonalDone(false)
+        props.checkLocalStorage()
     }
 
     return (
