@@ -64,6 +64,7 @@ export default function App() {
         setWorkDone={setWorkDone}
         setEducationDone={setEducationDone}
         setPersonalDone={setPersonalDone}
+        checkLocalStorage={checkLocalStorage}
       
       />
     )
