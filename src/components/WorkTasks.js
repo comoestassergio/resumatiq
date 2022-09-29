@@ -14,8 +14,10 @@ const Tasks = ({ isClicked, setIsClicked, setWorkEntry, workEntry, workExperienc
     }
 
     const handleAddTask = () => {
-        setTaskEntry(() => (taskEntry.concat({task: input, id: uniqid()})))
-        setInput('')
+        if (input.length > 0) {
+            setTaskEntry(() => (taskEntry.concat({task: input, id: uniqid()})))
+            setInput('')
+        }
     }
 
     const handleContinue = () => {
@@ -66,7 +68,7 @@ const Tasks = ({ isClicked, setIsClicked, setWorkEntry, workEntry, workExperienc
                 className={`btn w-80 md:w-96 ${input.length > 0 ? 'btn-accent' : 'btn-disabled' }`}
                 >
                  Add
-            </button>
+                </button>
             </form>
             {taskEntry.length > 0 && taskEntry.length < 5 &&
                 <button
