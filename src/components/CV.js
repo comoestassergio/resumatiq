@@ -185,7 +185,7 @@ const CV = (props) => {
                     </section>
                 </div>
             </div>
-            <footer className="footer footer-center p-10 mt-5 bg-gray-700 dark:bg-gray-900 text-base-content rounded-lg print:hidden">
+            <footer className="footer footer-center gap-y-3 p-10 mt-10 bg-gray-700 dark:bg-gray-900 text-base-content rounded-lg print:hidden">
                 <div className="flex flex-row px-4 py-2 bg-base-300 dark:bg-base-100 rounded-lg">
                     <kbd className="kbd">ctrl</kbd>
                     +
