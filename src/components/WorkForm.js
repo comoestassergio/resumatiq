@@ -39,16 +39,11 @@ const WorkForm = ( { workExperience, setWorkExperience, setIsClicked, isClicked}
         if (
             workEntry.workPlace.length > 0 &&
             workEntry.position.length > 0 &&
-            workEntry.startYear.length === 4 &&
-            workEntry.finishYear.length === 4
+            workEntry.startYear.length === 4 && 
+            (workEntry.finishYear.length === 4 || workEntry.finishYear === 'Present')
         ){
             return true
             }
-        else if (
-            workEntry.finishYear === 'Present'
-        ){
-            return true
-        }
         else {
             return false
         }
