@@ -37,7 +37,7 @@ const Skills = ({ userData, setUserData, setSkillsDone, setWorkDone }) => {
 
     return (
         <div className="flex flex-col justify-center items-center min-h-screen bg-base-200 gap-5">
-            <ul className="flex flex-row gap-3 max-w-xs md:max-w-lg lg:max-w-xl flex-wrap">
+            <ul className="flex flex-row justify-center gap-3 max-w-xs md:max-w-lg lg:max-w-xl flex-wrap">
                 {skillEntry.map(el => (
                     <SkillCard key={el.id} text={el.skill} setSkillEntry={setSkillEntry} skillEntry={skillEntry} card={el} />
                 ))}
