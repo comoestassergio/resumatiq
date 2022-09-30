@@ -81,20 +81,20 @@ const CoursesForm = ( { courses, setCourses, setIsClicked, isClicked } ) => {
             <input 
                     onChange={handleChange} 
                     type="text" 
-                    placeholder="Platform"
-                    name="platform" 
+                    placeholder="Course"
+                    name="course" 
                     className='input input-bordered w-full max-w-md col-span-2' 
-                    value={courseEntry.platform}
+                    value={courseEntry.course}  
                     title={'Cannot be empty'} 
                     required
             />
             <input 
                     onChange={handleChange} 
                     type="text" 
-                    placeholder="Course"
-                    name="course" 
+                    placeholder="Platform"
+                    name="platform" 
                     className='input input-bordered w-full max-w-md col-span-2' 
-                    value={courseEntry.course}  
+                    value={courseEntry.platform}
                     title={'Cannot be empty'} 
                     required
             />
