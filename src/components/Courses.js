@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import CoursesForm from "./CoursesForm"
 import CoursesCard from "./CoursesCard"
 
-const Courses = ( {userData, setUserData, setEducationDone, setPersonalDone} ) => {
+const Courses = ( {userData, setUserData, educationDone, setEducationDone, coursesDone, setCoursesDone} ) => {
     const [isClicked, setIsClicked] = useState(false)
     const [courses, setCourses] = useState([])
 
@@ -19,8 +19,8 @@ const Courses = ( {userData, setUserData, setEducationDone, setPersonalDone} ) =
     }
 
     const changePage = () => {
-        setEducationDone(true)
-        setPersonalDone(false)
+        setEducationDone(!educationDone)
+        setCoursesDone(!coursesDone)
     }
 
     if (isClicked){
