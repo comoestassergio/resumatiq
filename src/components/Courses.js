@@ -48,6 +48,9 @@ const Courses = ( {userData, setUserData, educationDone, setEducationDone, cours
                 ))}
             </ul>
             <button onClick={handleClick} className="btn w-60">Add courses</button>
+            {courses.length < 1 &&
+                <button onClick={handleContinue} className="btn btn-ghost w-60">Skip</button>
+            }
             {courses.length > 0 && 
                 <button onClick={handleContinue} className="btn btn-primary w-60">Continue</button>
             }
