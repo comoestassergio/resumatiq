@@ -3,6 +3,7 @@ import React, {useState, useEffect} from 'react';
 import Hero from './components/Hero';
 import Personal from './components/Personal';
 import Education from './components/Education';
+import Courses from './components/Courses';
 import Work from './components/Work';
 import Skills from './components/Skills';
 import Interests from './components/Interests';
@@ -33,6 +34,7 @@ export default function App() {
   const [start, setStart] = useState(false)
   const [personalDone, setPersonalDone] = useState(false)
   const [educationDone, setEducationDone] = useState(false)
+  const [coursesDone, setCoursesDone] = useState(false)
   const [workDone, setWorkDone] = useState(false)
   const [skillsDone, setSkillsDone] = useState(false)
   const [interestsDone, setInterestsDone] = useState(false)
@@ -104,13 +106,26 @@ export default function App() {
     )
   }
 
-  if (educationDone){
+  if (coursesDone){
     return (
       <Work 
         userData={userData} 
         setUserData={setUserData}
         setWorkDone={setWorkDone}
         setEducationDone={setEducationDone}
+      />
+    )
+  }
+
+  if (educationDone) {
+    return (
+      <Courses 
+        userData={userData}
+        setUserData={setUserData}
+        setCoursesDone={setCoursesDone}
+        coursesDone={coursesDone}
+        setEducationDone={setEducationDone}
+        educationDone={educationDone}
       />
     )
   }
