@@ -112,7 +112,9 @@ export default function App() {
         userData={userData} 
         setUserData={setUserData}
         setWorkDone={setWorkDone}
-        setEducationDone={setEducationDone}
+        workDone={workDone}
+        setCoursesDone={setCoursesDone}
+        coursesDone={coursesDone}
       />
     )
   }

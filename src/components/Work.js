@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import WorkForm from "./WorkForm";
 import WorkCard from "./WorkCard";
 
-const Work = ({ userData, setUserData, setWorkDone, setEducationDone }) => {
+const Work = ({ userData, setUserData, workDone, setWorkDone, coursesDone, setCoursesDone }) => {
     
     const [isClicked, setIsClicked] = useState(false)
     const [workExperience, setWorkExperience] = useState([])
@@ -20,8 +20,8 @@ const Work = ({ userData, setUserData, setWorkDone, setEducationDone }) => {
     }
 
     const changePage = () => {
-        setEducationDone(false)
-        setWorkDone(true)
+        setCoursesDone(!coursesDone)
+        setWorkDone(!workDone)
     }
 
     if (isClicked) {
