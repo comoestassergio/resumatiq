@@ -10,10 +10,10 @@ const CoursesCard= ({ platform, course, startYear, gradYear, courses, setCourses
         <li className="flex flex-col md:flex-row text-center md:text-left gap-2 md:gap-0 items-center justify-between w-80 md:w-96 bg-slate-50 dark:bg-transparent dark:border-2 dark:border-gray-500 rounded-lg p-5 card">
             <div>
                 <h3 className="text-lg uppercase font-bold dark:text-gray-400">
-                    {platform}
+                    {course}
                 </h3>
                 <p className="text-sm text-zinc-500 mb-1 capitalize">
-                    {course}
+                    {platform}
                 </p>
                 <p className="text-sm text-zinc-600">
                     {startYear} - {gradYear}
