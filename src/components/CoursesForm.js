@@ -1,7 +1,7 @@
 import React, {useState} from "react"
 import uniqid from 'uniqid'
 
-const CoursesForm = ( { education, setCourses, setIsClicked, isClicked } ) => {
+const CoursesForm = ( { courses, setCourses, setIsClicked, isClicked } ) => {
 
     const coursesData = {
         platform: '',
@@ -28,7 +28,7 @@ const CoursesForm = ( { education, setCourses, setIsClicked, isClicked } ) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         if (formValidator()){
-            setCourses(education.concat(courseEntry))
+            setCourses(courses.concat(courseEntry))
             setIsClicked(false)
         }
     }
