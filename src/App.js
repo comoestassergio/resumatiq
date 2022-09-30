@@ -26,6 +26,7 @@ export default function App() {
     interests: [],
     skills: [],
     title: '',
+    courses: [],
   }
 
   const [userData, setUserData] = useState(initialData)
