@@ -130,7 +130,7 @@ const CV = (props) => {
                         <h2 className="text-2xl font-bold uppercase mb-1">Experience</h2>
 
                         {data.workExperience.map(el => (
-                            <div key={el.id} className="flex flex-col gap-1 border-2 border-solid border-gray-300 rounded-lg p-4 md:p-5 print:p-4">
+                            <div key={el.id} className="flex flex-col gap-1 border-2 border-solid border-gray-300 rounded-lg p-4 md:p-5 print:py-3 print:px-4">
                                 <p className="text-xl uppercase text-gray-600 print:text-lg dark:text-gray-500">{el.position}</p>
                                 <p className="text-lg font-bold capitalize print:text-sm">{el.workPlace}</p>
                                 <p className="flex gap-2 text-sm items-center">
@@ -172,7 +172,7 @@ const CV = (props) => {
                     <section className="flex flex-col gap-2">
                         <h2 className="text-2xl font-bold uppercase mb-1">Education</h2>
                         {data.education.map(el => (
-                            <div key={el.id} className="flex flex-col gap-1 border-2 border-gray-300 rounded-lg p-4 md:p-5 print:p-4">
+                            <div key={el.id} className="flex flex-col gap-1 border-2 border-gray-300 rounded-lg p-4 md:p-5 print:py-3 print:px-4">
                                 <p className="text-xl uppercase text-gray-600 print:text-lg dark:text-gray-500">{el.degree}</p>
                                 <p className="text-lg capitalize font-bold print:text-sm">{el.university}</p>
                                 <p className="flex gap-2 text-sm items-center">
@@ -188,7 +188,7 @@ const CV = (props) => {
                         <section className="flex flex-col gap-2">
                             <h2 className="text-2xl font-bold uppercase mb-1">Courses</h2>
                             {data.courses.map(el => (
-                                <div key={el.id} className="flex flex-col gap-1 border-2 border-gray-300 rounded-lg p-4 md:p-5 print:p-4">
+                                <div key={el.id} className="flex flex-col gap-1 border-2 border-gray-300 rounded-lg p-4 md:p-5 print:py-3 print:px-4">
                                     <p className="text-xl uppercase text-gray-600 print:text-lg dark:text-gray-500">{el.course}</p>
                                     <p className="text-lg capitalize font-bold print:text-sm">{el.platform}</p>
                                     <p className="flex gap-2 text-sm items-center">
