@@ -127,11 +127,11 @@ const CV = (props) => {
             <div className="grid grid-cols-1 md:grid-cols-2 mt-8 gap-x-10 gap-y-8 print:grid-cols-2">
                 <div className="flex flex-col gap-5">
                     <section className={`flex flex-col gap-2`}>
-                        <h2 className="text-2xl font-bold uppercase mb-1">Experience</h2>
+                        <h2 className="text-2xl font-bold uppercase mb-1 print:text-lg">Experience</h2>
 
                         {data.workExperience.map(el => (
                             <div key={el.id} className="flex flex-col gap-1 border-2 border-solid border-gray-300 rounded-lg p-4 md:p-5 print:py-3 print:px-4">
-                                <p className="text-xl uppercase text-gray-600 print:text-lg dark:text-gray-500">{el.position}</p>
+                                <p className="text-xl uppercase text-gray-600 print:text-sm dark:text-gray-500">{el.position}</p>
                                 <p className="text-lg font-bold capitalize print:text-sm">{el.workPlace}</p>
                                 <p className="flex gap-2 text-sm items-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
@@ -151,7 +151,7 @@ const CV = (props) => {
                     </section>
                     {data.interests.length > 0 &&
                         <section>
-                            <h2 className="text-2xl font-bold uppercase mb-4">Interests</h2>
+                            <h2 className="text-2xl font-bold uppercase mb-4 print:text-lg">Interests</h2>
                             <ul className="flex gap-3 flex-wrap print:gap-2">
                                 {data.interests.map(el => (
                                     <li key={el.id} className='border-2 border-gray-300 capitalize px-4 py-1 md:px-5 md:py-2 rounded-lg print:px-2 print:py-0.5 print:text-sm'>{el.interest}</li>
@@ -162,7 +162,7 @@ const CV = (props) => {
                 </div>
                 <div className="flex flex-col gap-5">
                     <section className="">
-                        <h2 className="text-2xl font-bold uppercase mb-1">Skills</h2>
+                        <h2 className="text-2xl font-bold uppercase mb-1 print:text-lg">Skills</h2>
                         <ul className="flex flex-row gap-3 mt-3 flex-wrap print:gap-2">
                             {data.skills.map(el => (
                                 <li key={el.id} className="border-2 border-gray-300 capitalize px-4 py-1 md:px-5 md:py-2 rounded-lg print:px-2 print:py-0.5 print:text-sm">{el.skill}</li>
@@ -170,11 +170,11 @@ const CV = (props) => {
                         </ul>
                     </section>
                     <section className="flex flex-col gap-2">
-                        <h2 className="text-2xl font-bold uppercase mb-1">Education</h2>
+                        <h2 className="text-2xl font-bold uppercase mb-1 print:text-lg">Education</h2>
                         {data.education.map(el => (
                             <div key={el.id} className="flex flex-col gap-1 border-2 border-gray-300 rounded-lg p-4 md:p-5 print:py-3 print:px-4">
-                                <p className="text-xl uppercase text-gray-600 print:text-lg dark:text-gray-500">{el.degree}</p>
-                                <p className="text-lg capitalize font-bold print:text-sm">{el.university}</p>
+                                <p className="text-xl uppercase text-gray-600 print:text-sm dark:text-gray-500">{el.degree}</p>
+                                <p className="text-lg capitalize font-bold print:text-xs">{el.university}</p>
                                 <p className="flex gap-2 text-sm items-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
@@ -186,11 +186,11 @@ const CV = (props) => {
                     </section>
                     {data.courses.length > 0 &&
                         <section className="flex flex-col gap-2">
-                            <h2 className="text-2xl font-bold uppercase mb-1">Courses</h2>
+                            <h2 className="text-2xl font-bold uppercase mb-1 print:text-lg">Courses</h2>
                             {data.courses.map(el => (
                                 <div key={el.id} className="flex flex-col gap-1 border-2 border-gray-300 rounded-lg p-4 md:p-5 print:py-3 print:px-4">
-                                    <p className="text-xl uppercase text-gray-600 print:text-lg dark:text-gray-500">{el.course}</p>
-                                    <p className="text-lg capitalize font-bold print:text-sm">{el.platform}</p>
+                                    <p className="text-xl uppercase text-gray-600 dark:text-gray-500 print:text-sm">{el.course}</p>
+                                    <p className="text-lg capitalize font-bold print:text-xs">{el.platform}</p>
                                     {el.startYear === el.graduationYear ? 
                                         <p className="flex gap-2 text-sm items-center">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
