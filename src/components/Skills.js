@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import uniqid from 'uniqid'
+import autoAnimate from "@formkit/auto-animate";
 import SkillCard from "./SkillCard";
 
 const Skills = ({ userData, setUserData, setSkillsDone, setWorkDone }) => {
@@ -8,6 +9,11 @@ const Skills = ({ userData, setUserData, setSkillsDone, setWorkDone }) => {
 
     const [skillEntry, setSkillEntry] = useState(skills)
     const [input, setInput] = useState('')
+
+    const ul = useRef(null)
+    useEffect(() => {
+        ul.current && autoAnimate(ul.current)
+    }, [ul])
 
     const handleInput = (e) => {
         setInput(e.target.value)
@@ -37,7 +43,7 @@ const Skills = ({ userData, setUserData, setSkillsDone, setWorkDone }) => {
 
     return (
         <div className="flex flex-col justify-center items-center min-h-screen bg-base-200 gap-5">
-            <ul className="flex flex-row justify-center gap-3 max-w-xs md:max-w-lg lg:max-w-xl flex-wrap">
+            <ul ref={ul} className="flex flex-row justify-center gap-3 max-w-xs md:max-w-lg lg:max-w-xl flex-wrap">
                 {skillEntry.map(el => (
                     <SkillCard key={el.id} text={el.skill} setSkillEntry={setSkillEntry} skillEntry={skillEntry} card={el} />
                 ))}
