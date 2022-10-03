@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import uniqid from 'uniqid'
+import autoAnimate from "@formkit/auto-animate";
 import WorkTaskCard from "./WorkTaskCard";
 
 const Tasks = ({ isClicked, setIsClicked, setWorkEntry, workEntry, workExperience, setWorkExperience, setOpenTasks, openTasks }) => {
@@ -8,6 +9,11 @@ const Tasks = ({ isClicked, setIsClicked, setWorkEntry, workEntry, workExperienc
 
     const [taskEntry, setTaskEntry] = useState(initialTasks)
     const [input, setInput] = useState('')
+
+    const ul = useRef(null)
+    useEffect(() => {
+        ul.current && autoAnimate(ul.current)
+    }, [ul])
 
     const handleInput = (e) => {
         setInput(e.target.value)
@@ -40,7 +46,7 @@ const Tasks = ({ isClicked, setIsClicked, setWorkEntry, workEntry, workExperienc
 
     return (
         <div className="flex flex-col justify-center items-center min-h-screen bg-base-300 gap-5">
-            <ul className="flex flex-col gap-3 max-w-xs md:max-w-lg lg:max-w-xl flex-wrap">
+            <ul ref={ul} className="flex flex-col gap-3 max-w-xs md:max-w-lg lg:max-w-xl flex-wrap">
                 {taskEntry.map(el => (
                     <WorkTaskCard 
                         key={el.id} 
