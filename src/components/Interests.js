@@ -1,5 +1,6 @@
-import React, {useState} from "react";
+import React, { useState, useRef, useEffect } from "react";
 import uniqid from 'uniqid'
+import autoAnimate from "@formkit/auto-animate";
 import InterestCard from "./InterestCard";
 
 const Interests = ({ userData, setUserData, setInterestsDone, setWorkDone }) => {
@@ -8,6 +9,11 @@ const Interests = ({ userData, setUserData, setInterestsDone, setWorkDone }) => 
 
     const [interestEntry, setInterestEntry] = useState(interests)
     const [input, setInput] = useState('')
+
+    const ul = useRef(null)
+    useEffect(() => {
+        ul.current && autoAnimate(ul.current)
+    }, [ul])
 
     const handleInput = (e) => {
         setInput(e.target.value)
@@ -38,7 +44,7 @@ const Interests = ({ userData, setUserData, setInterestsDone, setWorkDone }) => 
 
     return (
         <div className="flex flex-col justify-center items-center min-h-screen bg-base-200 gap-5">
-            <ul className="flex flex-row justify-center gap-3 max-w-xs md:max-w-lg lg:max-w-xl flex-wrap">
+            <ul ref={ul} className="flex flex-row justify-center gap-3 max-w-xs md:max-w-lg lg:max-w-xl flex-wrap">
                 {interestEntry.map(el => (
                     <InterestCard key={el.id} text={el.interest} setInterestEntry={setInterestEntry} interestEntry={interestEntry} card={el} />
                 ))}
